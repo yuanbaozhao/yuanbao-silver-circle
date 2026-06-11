@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「银发资讯」第13期 · 2026年6月4日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header .date {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "📊";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .section:nth-child(2) .section-title::before { content: "🏢"; }
+        .section:nth-child(3) .section-title::before { content: "📈"; }
+        .section:nth-child(4) .section-title::before { content: "🤖"; }
+        
+        .news-item {
+            background: #f8f9fc;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .news-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .news-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .news-meta {
+            font-size: 0.9em;
+            color: #718096;
+            margin-bottom: 12px;
+        }
+        
+        .news-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .news-link:hover {
+            text-decoration: underline;
+        }
+        
+        .news-summary {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .comment-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fff9e6 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f39c12;
+            margin-top: 15px;
+        }
+        
+        .comment-label {
+            font-weight: 600;
+            color: #d68910;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .comment-label::before {
+            content: "💭";
+            margin-right: 8px;
+        }
+        
+        .comment-text {
+            color: #6c5d3f;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+            padding: 35px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 2px solid #81c784;
+        }
+        
+        .summary-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .summary-title::before {
+            content: "🎯";
+            margin-right: 10px;
+        }
+        
+        .summary-text {
+            color: #1b5e20;
+            line-height: 2;
+            font-size: 1.05em;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+            
+            .news-title {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../creative-style.css">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>银发资讯</h1>
+            <div class="date">第13期 · 2026年6月4日</div>
+        </div>
+        
+        <div class="content">
+
+            <!-- 政策法规 -->
+            <div class="section">
+                <h2 class="section-title">政策法规</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">民政部等19部门联合出台《关于加强老年人就业服务促进银发经济发展的指导意见》</div>
+                    <div class="news-meta">
+                        来源：新华网 / 人民网 | 发布日期：2026年6月 |
+                        <a href="https://www.gov.cn" target="_blank" class="news-link">查看详情</a>
+                    </div>
+                    <div class="news-summary">
+                        国家民政部等19个部门联合印发了《关于加强老年人就业服务促进银发经济发展的指导意见》，明确提出要创造多样化、个性化的老年人就业岗位，完善老年人就业服务体系。在上海，力度更大——28个部门联合印发实施方案，核心目标是为有工作意愿的老年人提供精准的就业信息和服务对接，从岗位开发到技能培训，从权益保障到平台搭建，形成了一整套制度框架。19个部门、28个部门联合发文的阵容，说明银发经济已成为需要人社、民政、商务、文旅、卫健、教育等几乎所有社会治理主体协同作战的系统工程。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            28个部门联合发文，这在政府公文里算是顶格配置了。意味着银发经济不只是民政部的事，而是整个政府机器在协同推进。上海率先出了28个部门的方案，各地跟进的速度应该会加快。对从业者来说，这是明确的政策信号：老年人的"社会参与"要成体系了，招聘、培训、权益保障都会形成标准，市场空间很大。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">民政部发布2026年中央财政支持社会组织参与社会服务项目立项名单，82个项目正式获批</div>
+                    <div class="news-meta">
+                        来源：央视新闻客户端 | 发布日期：2026年6月4日 |
+                        <a href="http://www.chinanews.com.cn/gn/2026/06-04/10634332.shtml" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        民政部发布2026年中央财政支持社会组织参与社会服务项目立项名单，82个项目正式获批。项目聚焦"一老一小"、乡村振兴、欠发达地区和社会组织能力建设四个方面，推动办好民生实事。其中，80%以上的项目面向困境儿童、困难老人和精神障碍群体，提供包括陪伴和心理支持、专业照护、康复训练与社会融入支持等服务，预计直接受益人数超过15万人。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            82个项目、15万受益人——这是真金白银的社会服务投入。值得注意的是，80%以上面向困难老人和精神障碍群体，这说明政策兜底的力度在加大。对于做照护服务、康复训练、精神慰藉的社会组织来说，政策机遇很明显：只要能进入这个盘子，不愁没有资金支持。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">2026年县域养老服务提升计划公示：40个地区拟入选，北京东城区领衔</div>
+                    <div class="news-meta">
+                        来源：民政部官网 | 发布日期：2026年6月3日 |
+                        <a href="https://www.mca.gov.cn" target="_blank" class="news-link">查看详情</a>
+                    </div>
+                    <div class="news-summary">
+                        经地方申报、省级相关部门推荐、专家评审，拟将北京市东城区等40个地区，作为2026年县域养老服务提升计划项目的拟入选项目地区。公示期自2026年6月3日至6月9日。该计划旨在推动县域养老服务体系建设，提升基层养老服务能力，让优质养老资源下沉到县乡一级。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            县域养老服务提升计划值得关注。40个地区入选，意味着接下来的养老资源会向下沉——不只是资金，还包括服务标准、运营能力、数字系统的整体输出。对于做县域养老服务的公司，这是一个政策窗口期：谁能帮县乡建立标准化的养老服务网络，谁就能拿到这波红利。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 产业动态 -->
+            <div class="section">
+                <h2 class="section-title">产业动态</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">上海老博会（AID 2026）6月4日开幕，近680家海内外企业参展创历史新高</div>
+                    <div class="news-meta">
+                        来源：中国青年报 / 上观新闻 | 发布日期：2026年6月4日 |
+                        <a href="http://t.m.youth.cn/transfer/index/url/news.youth.cn/jsxw/202606/t20260604_16697769.htm" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        上海国际养老、辅具及康复医疗博览会（AID 2026）于6月4日至6日在上海新国际博览中心正式启幕。来自22个国家和地区的近680家海内外银发产业领军企业进驻展会现场，覆盖养老服务、家电、家居、辅具、食品、汽车、通信、金融、文旅等多个领域的一线品牌。泰康之家、中信养老、人寿堂等"金融+养老"行业中坚力量集结，丰实、上汽大通、强生等无障碍福祉车企业与程天科技、肯綮、小神童等创新行动辅具科技力量同台竞放。澳大利亚展团规模翻倍，加拿大、英国首次以官方组团形式加入。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            680家企业、22个国家和地区——上海老博会已成为银发经济的世界级窗口。今年最大的看点是"跨界品牌指数级增长"：不只是传统养老企业，而是家电、汽车、金融、消费品牌全面入场。这说明银发经济从"专业赛道"变成了"主战场"。对从业者来说，竞争维度变了：以后不只是看谁更懂养老，而是看谁更能整合跨行业资源。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">大连睿康之家颐心苑（三期）6月正式运营，开创"三级医院里的养老机构"新模式</div>
+                    <div class="news-meta">
+                        来源：大观新闻 | 发布日期：2026年6月1日 |
+                        <a href="http://news.qq.com/rain/a/20260604A03K8R00" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        2026年6月1日，睿康之家颐心苑（三期）在大连睿康心血管病医院5楼正式开放运营。这是国内首创的"院中院"养老模式——养老机构直接设在三级医院里，共享专家资源、大型设备、ICU等，拥有老年疾病的综合诊疗和急救能力。颐心苑总面积1345平方米，规划了19个房间、28个床位，配备毫米波雷达秒级预警系统，医护1分钟到床旁、2分钟进手术室。睿康之家颐养院（一期二期）仅用两年时间就拿到了"辽宁省五级养老机构"评定，目前持续满住。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            这个模式有意思。"医院不收、养老院不敢收、家里扛不住"——这是很多家庭的痛点。睿康之家把养老院直接开进三级医院，物理上解决了"医养结合"最难的那一公里。28个床位不多，但这个模式如果跑通，会有很强的复制价值。关键是：三级医院愿意拿出5楼给养老机构用，说明政策层面也在推动这种创新。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">银发经济相关企业突破43.8万家，2026年新增注册企业约3.8万家</div>
+                    <div class="news-meta">
+                        来源：雷达Finance | 发布日期：2026年6月4日 |
+                        <a href="http://news.qq.com/rain/a/20260604A02TJA00" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        天眼查专业版数据显示，截至目前我国现存在业、存续状态的银发经济相关企业超43.8万家。其中，2026年截至目前新增注册相关企业约3.8万余家，从企业注册数量趋势来看，近五年间，银发经济相关企业的注册数量呈现出逐年增长的态势，并在2025年达到顶峰。从区域分布来看，山东省、广东省、江苏省银发经济相关企业数量位居前列，分别拥有超4万余家、3.5万余家和3.3万余家。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            43.8万家，这个数字说明银发经济已经是一个"全民参与"的大赛道。但也要清醒：企业数量多，不代表质量高。43.8万家里，有多少是真正有竞争力、能持续运营的？行业的洗牌期应该快到了——不是比谁先进场，而是比谁能活下来、活得好。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 市场趋势 -->
+            <div class="section">
+                <h2 class="section-title">市场趋势</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">上海银发消费2030年预计达7063亿元，养老产业年度总支出3745.9亿元</div>
+                    <div class="news-meta">
+                        来源：上观新闻 / 新浪财经 | 发布日期：2026年6月4日 |
+                        <a href="http://m.163.com/dy/article/KUJT49Q005568W0A.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        上海市政府参事、华东师范大学老龄研究院执行院长吴瑞君在上海老博会上透露，2024年上海养老产业年度总支出达3745.9亿元，预计2030年上海银发消费规模上限可达7063亿元。上海老龄化程度位居全国首位，60岁以上户籍人口已达584万，占户籍总人口的37.6%。作为科创中心，上海是养老技术与服务融合创新的优质试验场，其中张江已成为智慧养老应用创新高地，预计未来5至10年相关产业规模将突破200亿元。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            7063亿——这是上海一个城市的预测，不是全国。这个数字说明上海在银发经济上的潜力远超其他城市。但更重要的是吴瑞君提到的"张江200亿"——一个区的智慧养老产业规模就能达到200亿，说明科技赋能的密度有多高。对创业者来说，张江是个好选择：有政策、有资本、有场景。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">银发消费从"满足刚需"转向"取悦自己"，30万亿市场蓝图浮现</div>
+                    <div class="news-meta">
+                        来源：虎哥闲聊 / 说财见智 | 发布日期：2026年6月4日 |
+                        <a href="http://news.qq.com/rain/a/20260604A02WUQ00" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        我国60岁以上老年人口已达3.2亿，预计2035年超4亿，银发经济规模有望突破30万亿元。消费结构正在发生根本性转变：从"被照顾对象"到"消费主力军"，从"生存型消费"到"享老型消费"。上海首家"长者友好商城"推出"银龄新职"岗位，包括沙龙讲师、商场体验官、乐活摄影师等，招募信息发布不到20天报名突破百人。75岁银发交响乐团每周排练、每年演出超15场。老年大学2026年春季提供学额超50万个，全年实际参与人次突破105万。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            30万亿的预测已经很常见了，但真正有意思的是消费结构的变化——从"养老"到"享老"，从刚需到"取悦自己"。这意味着产品的逻辑要变：以前是"解决痛点"，以后是"创造快乐"。沙龙讲师、体验官、摄影师这些新职业的出现，说明老年人愿意为"被需要"付费，而不只是在消费。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">上海"银龄新职"探索老年人价值释放，50万学额折射老年教育大缺口</div>
+                    <div class="news-meta">
+                        来源：说财见智 | 发布日期：2026年6月4日 |
+                        <a href="http://news.qq.com/rain/a/20260604A02WUQ00" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        上海普陀区某商场推出首批"银龄新职"岗位，24位50至75岁的退休人员入选试用，成为上海首家"长者友好商城"的首批"银龄新员工"。岗位包括沙龙讲师、商场体验官、乐活摄影师，按次结算薪酬，单次200至3000元不等。上海构建市、区、街镇三级老年教育体系，每年提供学额逾50万个，但全年实际参与人次突破105万——50万学额对应105万需求，说明供给严重不足。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            50万学额、105万人次——这个缺口说明了什么？说明老年教育不是"锦上添花"，是"刚需"。老年人想学习，而且愿意付费学习。问题是供给太单一了——主要还是政府和公立机构在做。如果能做出高质量、市场化的老年教育产品，这个赛道值得深耕。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 技术创新 -->
+            <div class="section">
+                <h2 class="section-title">技术创新</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">养老服务机器人市场规模今年将突破100亿元，30家A股上市公司布局康复机器人</div>
+                    <div class="news-meta">
+                        来源：中国金融新闻网 | 发布日期：2026年6月4日 |
+                        <a href="https://www.financialnews.com.cn/m/2026-06/04/content_450409.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        据中国软件评测中心发布的《智能养老服务机器人产业演进与未来趋势研究》报告显示，我国养老服务机器人产业已初步形成体系，正处在从技术验证阶段向规模化应用过渡的关键期，今年我国养老服务机器人市场规模将突破100亿元。30家A股上市公司已布局康复类机器人，约10家以养老康复机器人或其产业链环节为主营业务，聚焦下肢外骨骼机器人、智能康复设备、脑机接口康复系统等领域。5月30日，2026北京智慧康养机器人应用大赛在北京经济技术开发区太保家园·北京国际颐养社区开幕。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            100亿的市场规模，对于机器人赛道来说不算大，但增速很快。30家A股公司在布局，说明这个赛道已经被主流资本认可。但从投资角度，康复机器人比陪伴机器人更实在——商业模式清晰（医院/养老机构采购）、需求刚性强、支付方明确。关注康复辅具的创业公司值得关注。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">上海老博会展示前沿智能养老产品：AI导盲机器狗、智能轮椅、外骨骼机器人集中亮相</div>
+                    <div class="news-meta">
+                        来源：中国日报网 / 中国青年报 | 发布日期：2026年6月4日 |
+                        <a href="http://cn.chinadaily.com.cn/a/202606/04/WS6a216d2ea310942cc49b01c6.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        上海老博会展示多款前沿智能养老产品：北京万易的"大易"导盲机器狗专为视障人士研发，拥有4种导航模式和6大感知能力，可在有网或无网环境下自由行走，上下楼梯如履平地；科大国创的智銮S5智能助行机器人是全球首款将L2级汽车智驾系统移植到助行场景的产品，搭载ACC自适应巡航、FCW防碰撞预警、AEB自动刹车；中山小神童的X13具身移动机器人可智能驾驭楼梯、斜坡及崎岖路面；斯维驰M6雷达智能代步车以AI雷达避障系统智能规避障碍。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            今年老博会的产品成熟度明显提升。L2级智驾系统移植到助行机器人——这个技术跨界很有想象力。把汽车行业的成熟技术用到养老场景，是降低成本的好路径。导盲机器狗也很值得关注：视障人士是重度需求群体，但之前产品成熟度不够，现在4种导航模式、6大感知能力，说明技术已经接近实用了。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">国内首单养老机器人全生命周期责任保险在上海落地，保险托底破局"不敢用"难题</div>
+                    <div class="news-meta">
+                        来源：中国金融新闻网 | 发布日期：2026年6月 |
+                        <a href="https://www.financialnews.com.cn/m/2026-06/04/content_450409.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        今年1月，国内首单养老机器人全生命周期责任保险在上海落地。该保险由浦东新区民政局指导，平安产险联合养老机器人企业、川沙养护院共同打造。保险条款实现了关键突破——首次将研发测试阶段的智能设备纳入承保范围，覆盖从技术研发、场景测试到批量生产、销售应用的全流程。按照规划，未来3年内，浦东新区150家养护院都将参照这一模式开展合作，让智能养老技术惠及更多老年人。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            这个保险创新解决了行业的核心痛点："不敢用"。养老机构不敢用新科技，是因为担心出问题担责任；机器人企业不敢推，是因为测试阶段的风险没有保障。现在保险打通了全生命周期，这个"最后一公里"被打通了。150家养护院3年内全覆盖——这个推广速度很快，说明政策层面是支持的。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 本周观察 -->
+            <div class="summary-section">
+                <h2 class="summary-title">本期观察</h2>
+                <div class="summary-text">
+                    <p>
+                        <strong>上海老博会折射行业全貌：跨界品牌全面入场，银发经济进入主战场。</strong>680家企业、22个国家和地区——上海老博会已是世界级舞台。家电、汽车、金融、消费品牌不再只是"试水"，而是"认真布局"。这意味着银发经济的竞争维度变了：以前是专业选手的比拼，以后是资源整合能力的较量。
+                    </p>
+                    <p>
+                        <strong>政策层面持续加码，社会组织获82个项目支持，县域养老服务提升计划覆盖40个地区。</strong>28个部门联合发文支持老年人就业服务，民政部82个中央财政支持项目落地，40个县域养老服务拟入选地区公示——政策、资金、资源正在形成合力，推动银发经济从"概念"走向"落地"。
+                    </p>
+                    <p>
+                        <strong>养老机器人从"百亿"走向"万亿"生态，保险托底破解应用瓶颈。</strong>100亿市场是起点，保险机制打通了"不敢用"的最后一公里。从康复机器人到陪伴机器人，从导盲机器狗到智能轮椅，技术成熟度正在快速提升。当保险、资本、政策三方共振，养老机器人的规模化应用将进入加速期。
+                    </p>
+                    <p>
+                        <strong>核心判断：上海已成银发经济"全球策源地"，北京紧随其后。</strong>上海的7063亿银发消费预测、张江200亿智慧养老产业规划、浦东150家养护院3年内覆盖保险机制——上海在银发经济上的引领地位已经确立。北京亦有太保家园智慧康养机器人大赛等动作。两城联动，中国的银发经济正在从"追赶"走向"引领"。
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2026 银发资讯 by 赵元宝 | zhaoyuanbao.com
+        </div>
+    </div>
+
+    <div class="site-counter" style="font-size:0.78rem;opacity:0.72;display:flex;gap:0.9rem;align-items:center;flex-wrap:wrap;">
+      <span id="busuanzi_container_site_pv">👁️ 总访问量 <strong id="busuanzi_value_site_pv">--</strong> 次</span>
+      <span id="busuanzi_container_site_uv">👤 访客数 <strong id="busuanzi_value_site_uv">--</strong> 人</span>
+    </div>
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>

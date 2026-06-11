@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026上海老博会 · 银发经济最强风向标</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg:        oklch(0.98 0.015 75);
+      --bg-warm:   oklch(0.94 0.025 75);
+      --bg-earth:  oklch(0.88 0.04  70);
+      --text:      oklch(0.20 0.025 55);
+      --text-mid:  oklch(0.42 0.03  65);
+      --text-soft: oklch(0.60 0.02  70);
+      --accent:    oklch(0.58 0.14  42);
+      --accent-lt: oklch(0.92 0.04  75);
+      --gold:      oklch(0.72 0.10  88);
+      --border:    oklch(0.85 0.03  70);
+      --font-serif: 'Noto Serif SC', Georgia, serif;
+      --font-sans:  'Noto Sans SC', system-ui, sans-serif;
+      --radius: 12px; --radius-lg: 20px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: color-mix(in oklch, var(--bg) 92%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 6vw;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; color: var(--text-mid); transition: color 180ms; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 6vw 4rem;
+      background: linear-gradient(160deg, var(--bg-warm) 60%, oklch(0.93 0.05 45) 100%);
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; right: -5%; top: -20%; width: 50vw; height: 50vw;
+      background: radial-gradient(circle, oklch(0.58 0.14 42 / 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 500; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+    .hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 700; line-height: 1.15; margin-bottom: 1rem; }
+    .hero-sub { font-size: 1.05rem; color: var(--text-mid); max-width: 54ch; line-height: 1.8; margin-bottom: 2rem; }
+    .hero-badges { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--text-soft); }
+    .hero-badge::before { content: ''; display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+    /* STATS ROW */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-card {
+      background: var(--bg); padding: 2.5rem 2rem; text-align: center;
+    }
+    .stat-number { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.4rem; }
+    .stat-unit { font-size: 0.85rem; color: var(--text-soft); }
+    .stat-label { font-size: 0.85rem; color: var(--text-mid); margin-top: 0.3rem; }
+
+    /* SECTION */
+    .section { padding: 4rem 6vw; }
+    .section + .section { border-top: 1px solid var(--border); }
+    .section-tag { font-size: 0.75rem; font-weight: 500; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .section-title { font-family: var(--font-serif); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 1.5rem; }
+
+    /* INTRO */
+    .intro-text { font-size: 1.05rem; color: var(--text-mid); max-width: 70ch; line-height: 1.9; margin-bottom: 2rem; }
+    .intro-text em { font-style: normal; color: var(--accent); font-weight: 500; }
+
+    /* HIGHLIGHT CARDS */
+    .highlight-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    }
+    .highlight-card {
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2rem;
+      transition: transform 200ms var(--ease), box-shadow 200ms;
+    }
+    .highlight-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px oklch(0 0 0 / 0.08); }
+    .highlight-card .card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .highlight-card h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .highlight-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; }
+
+    /* OBSERVATION ROWS */
+    .obs-card {
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2rem 2rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .obs-card .obs-tag { display: inline-block; font-size: 0.72rem; font-weight: 500; color: var(--accent); background: var(--accent-lt); padding: 3px 12px; border-radius: 100px; margin-bottom: 1rem; }
+    .obs-card h3 { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.8rem; }
+    .obs-card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; }
+
+    /* KEY PRODUCTS */
+    .product-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .product-list li {
+      display: flex; align-items: flex-start; gap: 0.8rem;
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.2rem;
+      font-size: 0.9rem; color: var(--text-mid); line-height: 1.7;
+    }
+    .product-list li::before { content: '✦'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+    /* FINANCE SECTION */
+    .finance-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    }
+    .finance-card {
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2rem;
+    }
+    .finance-card h3 { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--accent); }
+    .finance-card p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.75; }
+
+    /* QUOTE */
+    .quote-block {
+      background: var(--bg-warm); border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 2rem 2.5rem; margin: 2rem 0;
+    }
+    .quote-block blockquote { font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; color: var(--text); line-height: 1.8; margin-bottom: 1rem; }
+    .quote-block cite { font-size: 0.82rem; color: var(--text-soft); font-style: normal; }
+
+    /* BAOZONG NOTE */
+    .note-box {
+      background: linear-gradient(135deg, oklch(0.96 0.03 75), oklch(0.96 0.03 55));
+      border: 1px solid oklch(0.72 0.10 88 / 0.4);
+      border-radius: var(--radius-lg); padding: 2rem 2.5rem; margin: 2rem 0;
+    }
+    .note-box .note-label { font-size: 0.75rem; font-weight: 600; color: oklch(0.58 0.14 42); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .note-box p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.85; }
+
+    /* SOURCES */
+    .sources { background: var(--bg-earth); }
+    .sources ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .sources li { font-size: 0.85rem; color: var(--text-soft); }
+    .sources a { color: var(--accent); }
+    .sources a:hover { text-decoration: underline; }
+
+    /* BACK BTN */
+    .back-btn-wrap { padding: 2rem 6vw; border-top: 1px solid var(--border); }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.88rem; color: var(--text-mid);
+      border: 1.5px solid var(--border); background: var(--bg);
+      border-radius: 100px; padding: 8px 20px;
+      transition: all 180ms; cursor: pointer;
+    }
+    .back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      background: var(--text); color: oklch(0.75 0.01 75);
+      padding: 2rem 6vw; text-align: center; font-size: 0.82rem;
+    }
+
+    @media (max-width: 768px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .highlight-grid, .finance-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">元宝<span>'</span>s 银发圈</div>
+  <ul class="nav-links">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="interviews.html">人物专访</a></li>
+    <li><a href="news.html">银发资讯</a></li>
+    <li><a href="events.html" class="active">论坛峰会</a></li>
+    <li><a href="quotes.html">大咖语录</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Forum &amp; Summit · 专题报道</div>
+  <h1>2026上海老博会<br>银发经济最强风向标</h1>
+  <p class="hero-sub">2026年6月4日至6日，为期三天的上海国际养老、辅具及康复医疗博览会在上海新国际博览中心落下帷幕。本届老博会规模创历史新高，全方位呈现了银发产业从"基础照护"向"科技赋能、生态融合、品质享老"转型的时代图景。</p>
+  <div class="hero-badges">
+    <span class="hero-badge">上海新国际博览中心</span>
+    <span class="hero-badge">2026年6月4日—6日</span>
+    <span class="hero-badge">免费注册入场</span>
+  </div>
+</div>
+
+<!-- KEY STATS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-number">10.3<span class="stat-unit">万</span></div>
+    <div class="stat-label">观众人次</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">6<span class="stat-unit">万㎡</span></div>
+    <div class="stat-label">展览面积</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">680<span class="stat-unit">家</span></div>
+    <div class="stat-label">参展企业</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number">22<span class="stat-unit">个</span></div>
+    <div class="stat-label">国家及地区</div>
+  </div>
+</div>
+
+<!-- EVENT OVERVIEW -->
+<div class="section">
+  <div class="section-tag">Overview</div>
+  <h2 class="section-title">这不是老博会，是银发经济的"全息图"</h2>
+  <p class="intro-text">
+    每年的上海老博会，就是银发经济的"年度快照"——政策走向、产业热点、消费趋势、技术前沿，全在里面。今年最大的感受是：<em>银发经济不再只是"养老"了，而是"创老"——老年人主动参与、主动享老、主动创造</em>。
+  </p>
+  <p class="intro-text">
+    从硬核外骨骼机器人到情感陪伴AI，从银行"会客厅"到意定监护信托，从各区展团同台竞技到国际展团规模翻倍——三天老博会，信息密度极高。本文从四个核心观察出发，带你身临其境。
+  </p>
+</div>
+
+<!-- 4 TREND CARDS -->
+<div class="section" style="background: var(--bg-warm); padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="section-tag">Trend Watch</div>
+  <h2 class="section-title">四大核心趋势</h2>
+  <div class="highlight-grid">
+
+    <div class="highlight-card">
+      <div class="card-icon">🦾</div>
+      <h3>科技：从机构专用<br>走向居家场景</h3>
+      <p>消费级外骨骼机器人、双足人形机器人、仿生熊猫四足机器人、智能代步车扎堆亮相。国家补贴叠加平台补贴，让科技从"机构专属"加速飞入寻常百姓家。搭载L2级辅助驾驶系统的高端智能轮椅刷新出行体验，共享租赁模式有望进一步提升可及性。</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="card-icon">💳</div>
+      <h3>金融：从"卖产品"<br>到"卖安心"</h3>
+      <p>养老金融专区首度设立，W2馆成最"沉稳"的存在。银行不再是冷冰冰的"账房先生"，而化身"生活合伙人"：适老化改造合作、认知症公益活动、数字人民币硬钱包、意定监护+养老信托——金融的温度正在被重新定义。</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="card-icon">🏙️</div>
+      <h3>区域：各区展团<br>首次大规模同台</h3>
+      <p>上海各区首次大规模以展团形式集中亮相，史上第一次——黄浦"五边颐养"、虹口"虹彩乐龄"、普陀19家银发经济企业……"一区一特色、区区有亮点"，从蓝图走向实景。上海的银发经济版图，各区已经开始差异化竞争。</p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="card-icon">🌏</div>
+      <h3>国际："朋友圈"<br>持续扩容</h3>
+      <p>22个国家和地区参展，澳大利亚展团规模较去年翻倍，加拿大、英国以官方组团形式加入。超过1500平方米的国际展区，英国智能面料科技公司刚进入中国市场便亮相老博会——中国银发经济的吸引力，已经跨越国界。</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- TECH DEEP DIVE -->
+<div class="section">
+  <div class="section-tag">Tech Frontiers</div>
+  <h2 class="section-title">银发黑科技：从"谁陪伴、谁照护"的时代命题</h2>
+  <p style="font-size:1rem; color: var(--text-mid); max-width: 68ch; line-height: 1.85; margin-bottom: 2rem;">
+    今年老博会上的人工智能与机器人技术，被大量运用到适老消费场景。硬核科技不再是遥不可及的想象，而是长者手边触手可及的温暖依靠。
+  </p>
+  <ul class="product-list">
+    <li><strong>外骨骼机器人</strong>：傲鲨、众帅、海尔、中电科、肯綮等品牌悉数登场，现场铺设含平路、坡道、台阶的专属体验步道，市民可亲身穿戴体验，是今年现场体验的"大热门"</li>
+    <li><strong>具身机器人</strong>：双足人形机器人、仿生熊猫四足机器人、导盲机器狗集体亮相，启新颐年推出"云上社区"主题展台，兼具科技感、生活感与松弛感的智慧康养体验空间</li>
+    <li><strong>智能助行机器人</strong>：科大国创"智銮S5"搭载ACC自适应巡航、FCW防碰撞预警、AEB自动刹车功能，让老年人出行拥有"智能驾驶级别"的安全感</li>
+    <li><strong>情感陪伴AI</strong>：上海天与的"小与"AI陪伴机器人，以自然对话、健康监测与SOS一键求助，打造有温度的AI伴侣</li>
+    <li><strong>导盲机器狗</strong>：北京万易"大易"导盲机器狗，专为视障人士研发，拥有4种导航模式和6大感知能力，可在有网或无网环境下自由行走，上下楼梯如履平地</li>
+    <li><strong>具身移动机器人</strong>：中山小神童X13具身移动机器人，可智能驾驭楼梯、斜坡及崎岖路面，2026年3月斩获2025年度助残科技创新案例殊荣</li>
+    <li><strong>智能代步车</strong>：斯维驰M6雷达智能代步车，AI雷达避障+狭窄空间通行+双重安全机制（SOS一键求助+跌倒自动呼救），配备倒车可视系统及高清液晶屏</li>
+    <li><strong>外骨骼</strong>：程天科技GoGo-K速行膝关节助力外骨骼搭载AI步态适配算法；中电科"白虹"轻量型外骨骼机器人以碳纤维机身实现超轻穿戴</li>
+    <li><strong>AI陪伴机器人</strong>：上海天与"小与"AI陪伴机器人、上海蓝生"蓝小医"AI多模态健康服务机器人、钛云物联AI智慧养老陪伴机器人——自然对话、健康监测、风险筛查与SOS一键求助融为一体</li>
+    <li><strong>智慧中医诊疗 &amp; 认知训练仪</strong>：全面嵌入基层医疗卫生机构和养老机构，提升服务质量，保障长者健康</li>
+  </ul>
+</div>
+
+<!-- FINANCE DEEP DIVE -->
+<div class="section" style="background: var(--bg-warm); padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="section-tag">Silver Finance</div>
+  <h2 class="section-title">养老金融专区：银行的"变形记"</h2>
+
+  <div class="quote-block">
+    <blockquote>"以前觉得银行就是存钱取钱的地方，冷冰冰的，没想到现在居然能在这里喝咖啡、学防跌倒。"</blockquote>
+    <cite>——72岁的李阿姨，在中国银行展台前</cite>
+  </div>
+
+  <div class="finance-grid">
+    <div class="finance-card">
+      <h3>中国银行</h3>
+      <p>联动"记忆咖啡馆"，与轻度认知障碍长者一同开展认知障碍防护公益活动，将银行网点变成社区认知友好建设的延伸触角。</p>
+    </div>
+    <div class="finance-card">
+      <h3>建设银行</h3>
+      <p>与上海市民政局适老化改造平台首批综合服务商好美家联合参展，展示免施工适老化套餐，将金融延伸至老人家中那块防滑地板。</p>
+    </div>
+    <div class="finance-card">
+      <h3>工商银行</h3>
+      <p>推出"颐安智付"数字人民币就餐卡，外形似公交卡，内置数字人民币硬钱包，"碰一碰"完成支付，保留实体卡习惯的同时实现实时结算。</p>
+    </div>
+    <div class="finance-card">
+      <h3>浦发银行</h3>
+      <p>聚焦"意定监护+养老服务信托+养老服务机构"的普惠型服务信托业务，实现从"事后补救"向"事前安顿"转变，直击高龄、失独、丁克、"老养残"家庭的深层焦虑。</p>
+    </div>
+    <div class="finance-card">
+      <h3>交通银行</h3>
+      <p>与交银国际信托推出以特殊需要信托为核心的养老服务信托方案，构建覆盖"资金托管+照护履约+监护衔接+身后传承"全链条的养老保障体系。</p>
+    </div>
+    <div class="finance-card">
+      <h3>中国银联</h3>
+      <p>在青岛、天津、广西等地已落地养老助餐"刷脸支付"或"碰一碰支付"解决方案，老年人无需携带手机或银行卡即可在社区食堂完成用餐支付。</p>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-label">宝总观察</div>
+    <p>上海金融监管局、市民政局、人民银行上海市分行、上海市委金融办四部门联合印发了《关于创新开展养老服务信托试点的通知》，助力意定监护制度在沪落地，实现"管人""管财"分离。这标志着上海"金融+养老"服务体系完成从碎片化产品到系统化生态的关键升级。养老信托不只是产品，是制度创新——从业者要关注。</p>
+  </div>
+</div>
+
+<!-- CONSUMER BEHAVIOR -->
+<div class="section">
+  <div class="section-tag">Consumer Insight</div>
+  <h2 class="section-title">老年人变了：从"被动养老"到"主动享老"</h2>
+
+  <div class="obs-card">
+    <div class="obs-tag">需求位移</div>
+    <h3>从"生存型"到"品质型"</h3>
+    <p>中国老年保健协会社区养老分会会长李勇分析：最直观的变化，就是从基础端的功能性需求——吃喝拉撒、衣食住行——向更高层次的自我价值实现转变：<strong>悦己，不断寻求自己的价值和意义，不断重构社会关系</strong>。不再是老有所养，而是老有所乐、老有所为。</p>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-tag">消费逻辑</div>
+    <h3>银发族的"一站式"向往</h3>
+    <p>适老化改造"闯关"空间里，老人们对无需动工的防滑扶手、能爬楼梯的电动轮椅、AI辅助的厨房智能系统表现出极大兴趣。更重要的是，情绪价值成为新的引力场——"老男孩"时装队在黄浦展区走秀（平均年龄70+），旅居康养、银发兴趣社区App现场招揽"粉丝"，导游举着小旗引领"银发旅行团"穿梭其间。老去，也可以是一件很酷的事。</p>
+  </div>
+
+  <div class="obs-card">
+    <div class="obs-tag">代际观察</div>
+    <h3>中青年也在场</h3>
+    <p>穿梭在人群中的，不全是白发苍苍的面孔。许多中青年一边为父母了解养老产品，一边默默为二三十年后的自己做打算。银发经济的消费逻辑正在被改写：不仅是"为父母"，也是"为未来的自己"。</p>
+  </div>
+</div>
+
+<!-- POLICY & WELFARE -->
+<div class="section" style="background: var(--bg-warm); padding-top: 3rem; padding-bottom: 3rem;">
+  <div class="section-tag">Policy &amp; Welfare</div>
+  <h2 class="section-title">惠民服务：多重补贴叠加，让科技"好使"</h2>
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="card-icon">🏠</div>
+      <h3>适老化改造补贴</h3>
+      <p>针对四类困难老年家庭，补贴比例最高可达改造全额<strong>100%</strong>，单人最高补贴<strong>5000元</strong>，符合条件市民可通过"随申办"APP线上申请。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🦯</div>
+      <h3>智能助行产品补贴</h3>
+      <p>智能助行产品购买最高享<strong>20%</strong>购置补贴，单件封顶<strong>2000元</strong>。消费级外骨骼机器人叠加国家补贴、平台补贴和展会促销，成为今年现场最热门购买品类。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">📺</div>
+      <h3>智能家电补贴</h3>
+      <p>智能家电、家居产品按售价<strong>15%</strong>申领补贴。家电数码以旧换新同步上线，降低银发族拥抱智能生活的门槛。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">♿</div>
+      <h3>辅具租赁分级补贴</h3>
+      <p>低保老人租赁辅具最高可享<strong>70%</strong>费用减免，多家驻场银行推出银行卡现场满减活动。现场首次引入电动轮椅租赁服务，联合强生、大众提供福祉出租车公益服务。</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT YEAR -->
+<div class="section" style="background: linear-gradient(160deg, oklch(0.96 0.03 75), oklch(0.93 0.05 45));">
+  <div class="section-tag">Save the Date</div>
+  <h2 class="section-title">明年见！</h2>
+  <p class="intro-text">
+    <strong>2027年上海老博会</strong>将于<em>2027年6月10日至12日</em>继续在上海新国际博览中心举行。
+  </p>
+  <div class="note-box">
+    <div class="note-label">宝总预告</div>
+    <p>下一届老博会，预计科技适老的居家化、养老金融的制度化、区域竞争的差异化会更加明显。届时神州养老研习社将继续组织现场参访和深度交流，感兴趣的朋友请关注我们的后续通知。</p>
+  </div>
+</div>
+
+<!-- BRAND ALLSTAR -->
+<div class="section" style="padding-top:3rem;padding-bottom:3rem;">
+  <div class="section-tag">Brand Ecosystem</div>
+  <h2 class="section-title">银发经济"全明星盛典"：十余领域头部力量同台</h2>
+  <p style="font-size:0.95rem;color:var(--text-mid);max-width:68ch;line-height:1.85;margin-bottom:2rem;">本届老博会堪称中国银发经济的"全明星盛典"，十余个领域一线品牌悉数登场，共绘产业融合图景。</p>
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="card-icon">🏥</div>
+      <h3>养老服务</h3>
+      <p>泰康之家、中信养老、人寿堂、国康、新徐汇、数颐联康等行业中坚集结成阵，从高端养老社区到普惠居家服务全覆盖。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🏠</div>
+      <h3>家电与智慧家居</h3>
+      <p>海尔、中国电信、中国联通以银发场景深度参展，将智能家居能力延伸至适老化场景，让科技真正服务于老年生活。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🦽</div>
+      <h3>康复辅具</h3>
+      <p>鱼跃、八乐梦、麒势等领军品牌悉数到场，覆盖轮椅、助行、护理床等全品类适老辅具，国产替代加速。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🥛</div>
+      <h3>银发膳食与营养</h3>
+      <p>达能、光明、励成、A2等跨界巨头涌入，银发营养从"吃饱"升级为"吃好"，功能性食品成新热点。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🚗</div>
+      <h3>科技出行</h3>
+      <p>上汽大通、丰实、强生、大众等无障碍福祉车，与程天科技、肯綮、小神童等硬核科技力量同台竞放，全面重构银发出行生态。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🎵</div>
+      <h3>文娱旅游</h3>
+      <p>春秋旅游、东犁俱乐部、敦煌乐器等品牌点亮银发精神世界，"银发旅游"正在从概念走向爆款。</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONFERENCE & EVENTS -->
+<div class="section" style="background:var(--bg-warm);padding-top:3rem;padding-bottom:3rem;">
+  <div class="section-tag">Conference</div>
+  <h2 class="section-title">12场同期活动：思想的盛宴，产业的风向标</h2>
+  <p style="font-size:0.95rem;color:var(--text-mid);max-width:68ch;line-height:1.85;margin-bottom:1.5rem;">本届老博会期间共举办主题交流活动及专题沙龙<strong>12场</strong>，邀请近百位行业专家、企业领袖登台分享，吸引近<strong>4000人次</strong>现场参与。</p>
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="card-icon">🏆</div>
+      <h3>2026 AID银发产业创新发展大会</h3>
+      <p>本届最受瞩目的思想盛宴，以"探索·创新·引领：银发经济新动能与城市实践"为主题。人文财经观察家<strong>秦朔</strong>、上海交通大学国际与公共事务学院副院长<strong>张录法</strong>、上海市政府参事<strong>吴瑞君</strong>等重磅嘉宾出席，与央行、浦发银行、蚂蚁集团、傅利叶、达能、中信养老等机构代表同台，从新消费、金融创新、科技场景、标准体系、实体运营、科学营养等维度层层递进。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🏙️</div>
+      <h3>"大城养老"创新发展大会</h3>
+      <p>围绕养老金融、认知症照护、社区居家、膳食营养、意定监护、智慧养老六大主题，40余位行业专家和企业代表展开为期三天交流，为行业奉上兼具思想高度与实践深度的年度盛会。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">✈️</div>
+      <h3>上海银发旅游资源配置对接活动</h3>
+      <p>由市文旅局指导，搭建银发旅游产品供给与渠道需求之间的高效对接平台，推动文商旅体展深度融合发展，形成资源共享、场景共建的银发消费新生态。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">💡</div>
+      <h3>AID Talk &amp; 银发创业者沙龙</h3>
+      <p>"AI涌现，银发焕新-养老少数派报告第三季"、"2026首届银发金街业态创新大会"等精彩同期活动，进一步丰富展会议题，为银发经济的跨界创新提供思想碰撞场域。</p>
+    </div>
+  </div>
+</div>
+
+<!-- THEME ZONES -->
+<div class="section">
+  <div class="section-tag">Theme Zones</div>
+  <h2 class="section-title">主题展区："此心安处是吾乡"</h2>
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="card-icon">🏠</div>
+      <h3>银发生活展区</h3>
+      <p>以"此心安处是吾乡"为策展主题，系统整合银发三创大赛优秀产品与落地项目。现场打造沉浸式适老化样板间，并发起"适老空间纠错大挑战"，在趣味参与中普及适老化改造理念。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🔧</div>
+      <h3>康复辅具创新展区</h3>
+      <p>市民政局"乐无忧小屋"品牌集中亮相，呈现四大创新融合体验区："旅游社交+""认知康复+""居家/机构+""外骨骼竞技测评专区"，在互动中感受科技温度。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🍽️</div>
+      <h3>老食惠展区</h3>
+      <p>以"15分钟助餐服务圈"为主线，构建"长者食堂空间+城市助餐街区"双场景，五大板块环环相扣，呈现上海为老助餐服务在数字赋能、品质升级及人文关怀方面的综合成效。</p>
+    </div>
+    <div class="highlight-card">
+      <div class="card-icon">🎵</div>
+      <h3>乐龄街·老友路文娱街区</h3>
+      <p>全新孵化的乐龄文娱主题街区，十余家电声、民乐、键盘、弦乐、管乐品牌全程驻展。三天三大主题亮点层层递进：首日打卡游园+免费咖啡暖心开启；次日老年大学六大社团专场展演，武笑辉等知名演奏家公益课堂圈粉无数；收官日一诺专场乐器体验+银发音乐爱好者交流分享会压轴登场。<br><br>海伦、星海、一诺、珠江、吟飞、恩雅、之舟、圣锐、鹦鹉、津宝等品牌全程开放免费体验，所有乐器均针对中老年身体特征深度优化——机身轻量化、大字体简易操作、简化指法与气息门槛。恩雅赛博吉他灯光跟弹三分钟弹唱一首；之舟旗舰电吹管高保真音色+适老简化指法，红歌民乐怀旧金曲轻松演绎；津宝萨克斯优化按键间距与回弹力度，吹奏更省力。真正实现<strong>老有所乐、老有所学、老有所为</strong>。</p>
+    </div>
+  </div>
+</div>
+
+<!-- BAOZONG REVIEW -->
+<div class="section" style="background: linear-gradient(160deg, oklch(0.97 0.02 75), oklch(0.93 0.05 42) 100%);">
+  <div class="section-tag">宝总点评</div>
+  <h2 class="section-title">这一届老博会，我在现场看到了什么？</h2>
+
+  <div class="note-box" style="background: rgba(255,255,255,0.7); border-color: oklch(0.58 0.14 42 / 0.25);">
+    <div class="note-label" style="color: oklch(0.45 0.12 42);">宝总 · 神州养老研习社主理人</div>
+    <p style="font-size:1rem;line-height:1.9;color:var(--text);margin-bottom:1rem;">看了这么多年老博会，2026这一届，是让我真正感到银发经济从"概念"变成"生意"的一届。</p>
+    <p style="font-size:0.95rem;line-height:1.9;color:var(--text-mid);margin-bottom:1rem;">有几个判断，跟大家分享：</p>
+    <ol style="font-size:0.95rem;line-height:2;color:var(--text-mid);padding-left:1.5rem;margin-bottom:1.5rem;">
+      <li style="margin-bottom:0.6rem;"><strong style="color:var(--text);">科技适老正在跨越鸿沟。</strong> 外骨骼从B端走向C端，AI陪伴机器人开始进家庭，这不是趋势，是正在发生的事。明年这个时候，消费级的外骨骼很可能进入上海千家万户。补贴政策加速了这个过程。</li>
+      <li style="margin-bottom:0.6rem;"><strong style="color:var(--text);">养老金融是本届最大变量。</strong> 首届养老金融专区，意定监护+养老信托从理念变成产品，四部门联合发文试点——上海这一步走得很稳。从业者要高度关注：金融+养老的制度框架一旦成熟，整个行业的资金入口会发生根本性变化。</li>
+      <li style="margin-bottom:0.6rem;"><strong style="color:var(--text);">"银发"不只是老年人的事。</strong> 展会里大量中青年在场，不是陪着父母来，是为自己来。这意味着什么？意味着2030年、2035年的银发消费者，今天已经在构建自己的养老预期了。谁能提前占领这个心智，谁就赢。</li>
+      <li style="margin-bottom:0.6rem;"><strong style="color:var(--text);">"享老"取代"养老"是本届主旋律。</strong> 从乐龄街的乐器体验，到黄浦展区的时装走秀，到银发旅游的蓬勃——老年人不再满足于被照顾，他们要参与、要表达、要精彩。这个需求的释放，将催生一个比"养老服务"大得多的市场。</li>
+      <li style="margin-bottom:0.6rem;"><strong style="color:var(--text);">上海是中国银发经济的"超级实验场"。</strong> 各区展团同台、28部门联合发文、15分钟助餐服务圈、养老金融专区——上海在用城市级的力量系统性地构建银发经济的基础设施。这个模式一旦跑通，各地跟进的速度会远超预期。</li>
+    </ol>
+    <p style="font-size:0.95rem;line-height:1.9;color:var(--text-mid);">最后说一句：这届老博会最大的意义，不是展示了多少新产品，而是让我们看到——<strong style="color:var(--text);">银发经济正在从"朝阳产业"变成"当家产业"</strong>。2027年，我们再见。</p>
+  </div>
+</div>
+
+<!-- SOURCES -->
+<div class="section sources">
+  <div class="section-tag">References</div>
+  <h2 class="section-title" style="font-size:1.3rem;">信息来源</h2>
+  <ul>
+    <li>解放日报 · 记者 王海燕（2026-06-07）：<a href="https://www.shanghai.gov.cn/nw4411/20260607/924d3f1e27804f7abce18833fb540a04.html" target="_blank">上海老博会专题报道</a></li>
+    <li>上观新闻 / 上海民政（2026-06-06）：<a href="https://www.jfdaily.com.cn/sgh/detail?id=1761731" target="_blank">10.3万观众，规模创历史新高！2026上海老博会圆满落幕</a></li>
+    <li>AID老博会官方（2026-06-07）：<a href="https://mp.weixin.qq.com/s/C-v5dqQR_btsYUOKtSJn8g" target="_blank">构筑银发产业新生态·擘画跨界融合新蓝图——2026上海老博会圆满落幕（官方完整版）</a></li>
+    <li>AID老博会官方（2026-06-04）：<a href="https://mp.weixin.qq.com/s/wZYOKZu4EhdLsoiLkwIdxw" target="_blank">跨界无界、智融万家——2026上海老博会盛大开幕</a></li>
+    <li>AID老博会官方（2026-06-06）：<a href="https://mp.weixin.qq.com/s/dg-DoY04yfB5asWM9ihW0w" target="_blank">老博会乐龄街持续人气爆棚，老年大学专场展演领衔，趣味乐器体验乐享不停</a></li>
+    <li>AID老博会官方（2026-06-07）：<a href="https://mp.weixin.qq.com/s/Tj03S2SKkqVXGbIrgMQJeg" target="_blank">乐韵收官、美好留存——2026老博会乐龄街老友路温情谢幕</a></li>
+    <li>证券时报网 · 记者 李颖超（2026-06-06）：<a href="https://www.stcn.com/article/detail/3947343.html" target="_blank">实探上海老博会："无感"适老，让每一分钱都"好使"</a></li>
+    <li>新华网（2026-06-07）：<a href="http://sh.xinhuanet.com/20260607/ea18b64612a742cebbb1f4a4706ca0ca/c.html" target="_blank">直击上海老博会：科技赋能银发康养</a></li>
+    <li>新民晚报（2026-06-06）：<a href="http://news.qq.com/rain/a/20260606A03R7N00" target="_blank">打造可视化创新银发新消费场景，"云上社区"亮相老博会</a></li>
+    <li>新浪财经 · 上海照明电器行业协会（2026-06-07）：<a href="http://m.163.com/dy/article/KUQ7DFFR05568W0A.html" target="_blank">质量认证助力康养产业高质量发展会议</a></li>
+  </ul>
+</div>
+
+<!-- BACK -->
+<div class="back-btn-wrap">
+  <a href="events.html" class="back-btn">← 返回论坛峰会</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 元宝的银发圈 · 银发经济观察与研究</p>
+</footer>
+
+</body>
+</html>

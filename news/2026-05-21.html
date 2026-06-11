@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「银发资讯」第9期 · 2026年5月21日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header .date {
+            font-size: 1.1em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "📊";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .section:nth-child(2) .section-title::before { content: "🏢"; }
+        .section:nth-child(3) .section-title::before { content: "📈"; }
+        .section:nth-child(4) .section-title::before { content: "🤖"; }
+        
+        .news-item {
+            background: #f8f9fc;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .news-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .news-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+        
+        .news-meta {
+            font-size: 0.9em;
+            color: #718096;
+            margin-bottom: 12px;
+        }
+        
+        .news-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .news-link:hover {
+            text-decoration: underline;
+        }
+        
+        .news-summary {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .comment-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fff9e6 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f39c12;
+            margin-top: 15px;
+        }
+        
+        .comment-label {
+            font-weight: 600;
+            color: #d68910;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .comment-label::before {
+            content: "💭";
+            margin-right: 8px;
+        }
+        
+        .comment-text {
+            color: #6c5d3f;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+            padding: 35px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 2px solid #81c784;
+        }
+        
+        .summary-title {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .summary-title::before {
+            content: "🎯";
+            margin-right: 10px;
+        }
+        
+        .summary-text {
+            color: #1b5e20;
+            line-height: 2;
+            font-size: 1.05em;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+            
+            .news-title {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../creative-style.css">
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>银发资讯</h1>
+            <div class="date">第9期 · 2026年5月21日</div>
+        </div>
+        
+        <div class="content">
+
+            <!-- 政策法规 -->
+            <div class="section">
+                <h2 class="section-title">政策法规</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">民政部等9部门联合发文：培育养老服务经营主体，推进银发经济高质量发展</div>
+                    <div class="news-meta">
+                        来源：吉林省民政厅 | 发布日期：2026年5月12日 |
+                        <a href="https://xxgk.jl.gov.cn/zcbm/fgw_97981/xxgkmlqy/202605/t20260514_9606265.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        吉林省民政厅、金融监管局、人民银行等9部门联合印发《关于加强养老服务经营主体培育进一步推进银发经济高质量发展具体举措》，从财税优惠、用地保障、融资支持、护理员补贴等方面给予系统性政策支持。文件明确，在相关项目政府采购中禁止设置损害公平竞争的限制性条款，养老服务机构用电、用水、用气、用热享受居民生活类价格优惠政策，并支持符合条件的银发经济项目申报中央预算内投资。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            九部门联合发文，规格很高，说明这是系统工程而非单个部门的单兵推进。吉林省率先落地，可能跟当地老龄化程度有关（吉林是全国老龄化程度较高的省份之一）。值得关注的是"培育经营主体"这个措辞——不是培育机构，而是培育企业，说明政策层已开始用市场化逻辑来解决养老问题，不是简单发补贴了。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">海南省出台推动旅居养老高质量发展措施，打造康养平台与地方标准</div>
+                    <div class="news-meta">
+                        来源：民政部官网 | 发布日期：2026年5月14日 |
+                        <a href="https://www.mca.gov.cn/n1288/n1290/n1316/c1662004999980010692/content.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        海南省人民政府办公厅印发《关于推动旅居养老高质量发展的若干措施》，依托海南政策、生态、气候三大优势，发展以"养"为核心、"旅"为方式、"居"为载体的旅居养老模式。措施包括：推出适合老年人的主题旅居套餐和精品路线；推动医疗卫生机构与养老服务机构签约合作；鼓励养老机构纳入长护险定点管理；打造一体化康养平台，整合养老、医疗、教育等资源；分阶段制定旅居养老地方标准或团体标准，培育市场主体。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            海南这是在打明牌——气候+旅游+养老，三张牌打在一起，就是要让"候鸟老人"变成长期经济来源。这个战略很清晰，也很有地域特色。但关键在于落地质量：精品路线有没有真正适老化？医养结合能不能真的打通？标准制定谁来执行？这些都是细节决定成败的地方。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">民政部等12部门《关于推进互助性养老服务发展的意见》密集落地</div>
+                    <div class="news-meta">
+                        来源：财新网 / 国家卫健委 | 发布日期：2026年3月（5月密集传播） |
+                        <a href="https://database.caixin.com/m/2026-05-07/102441204.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        民政部、国家发展改革委、工信部、自然资源部、住建部、农业农村部、国家卫健委、广电总局、体育总局、中国残联、全国老龄办等12部门联合发布《关于推进互助性养老服务发展的意见》（民发〔2026〕11号）。意见鼓励农村依托集体经济、盘活闲置资源发展互助养老，支持邻里互助、时间银行等模式，并将其纳入基层治理创新考核体系。多地5月密集落地，推进农村养老服务网络建设。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            互助性养老是解决农村养老"缺钱缺人"的有效路径，但推进难度不小——农村老人组织成本高、持续性难保障。这次的12部门联合发文，规格上了一个台阶，关键是看资金配套能不能跟上。光靠情怀做不成互助养老，得有激励机制：谁提供服务，谁获得积分或补贴，这事才能转起来。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 产业动态 -->
+            <div class="section">
+                <h2 class="section-title">产业动态</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">越秀地产283.82万出售42家康养公司，房企养老资产"换手"加速</div>
+                    <div class="news-meta">
+                        来源：睿和智库 / 网易房产 | 发布日期：2026年5月 |
+                        <a href="https://c.m.163.com/news/a/KTCDPCH205158K7T.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        2026年5月，越秀地产公告将旗下直接或间接持有的42家养老、护理、医疗类被投资企业全部股权，以283.82万元名义对价转让给控股股东旗下广州越秀健康，买方同时通过专项贷款代偿标的公司所欠约3.93亿元股东借款。这是万科、华润之后又一大型房企出售养老资产，但标的公司均已资不抵债（合计负债1.34亿元），交易本质是一次精心设计的"止血手术"。与此同时，万科拟打包出售北方5个康养项目给新华保险，华润置地也挂牌转让润地康养平台100%股权。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            283.82万买42家公司，听起来像白捡，但代偿3.93亿债务，综合下来这是一次主动出清。越秀、万科、华润集体撤退，说明养老重资产模式对房企的财务承压是真实存在的——不是不看好赛道，而是等不起。但注意：撤退的是资产，不是运营能力。万科明确保留运营权，这是关键信号。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">险资接棒：保险资金成为养老资产新主力买家，"险资持有+专业运营"新范式确立</div>
+                    <div class="news-meta">
+                        来源：睿和智库 / 武汉金融研究院 | 发布日期：2026年5月 |
+                        <a href="https://jrj.wuhan.gov.cn/ztzl_57/xyrd/bxy/202406/t20240613_2415120.shtml" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        在房企集体撤退的同时，保险资金正成为养老资产的核心接棒者。万科拟将北方5个康养项目出售给新华保险（其已在37城布局53个康养社区）；中国人寿2026年初以16.2亿元接手金茂南京苏茂颐园，并成立85亿元康养产业基金二期；太平人寿早前以20.85亿元收购北京当代时光里养老社区。保险资金久期长、成本低，与养老重资产天然匹配，"险资持有+专业化机构运营"的新分工格局正在加速形成。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            这是一个非常重要的信号——养老产业的资本逻辑正在被重写。险资做持有，专业的养老运营商做运营，这是美国、日本成熟市场的标准分工。房企的基因是快周转、高杠杆，根本不适合养老这种10年以上才能成熟的赛道。现在资本属性归位了，行业才能真正健康发展。对做运营的创业者来说，机会来了：只要运营能力强，不愁找不到资金方。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">AI康养机器人赛道半年9笔融资近50亿，骅羲科技再获亚华电子战略投资</div>
+                    <div class="news-meta">
+                        来源：AgeClub | 发布日期：2026年5月15日 |
+                        <a href="https://www.ageclub.net/article-detail/9228" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        据AgeClub不完全统计，从2025年底至2026年5月，AI康养机器人赛道已完成至少9笔核心融资，累计吸金近50亿元，成为银发经济中确定性最强的新风口。赛道典型代表骅羲科技近12个月内完成第三轮战略融资，由上市公司亚华电子领投，资金持续投入具身养老机器人底层技术研发与产品线迭代，双方还将在技术架构、产品矩阵、渠道资源方面深度协同。资本逻辑已从"赌风口"转向"长期布局"。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            50亿砸进来，这个赛道已经不是早期了，进入到产业验证阶段。骅羲科技一年内连融三轮，说明技术产品化已经跑通，被资本认可。但我更关注的是：这些机器人真正用起来了吗？医院和养老院愿意为此买单吗？光有融资不够，产品必须真正进场景、产生复购，这个赛道才算真的成熟。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 市场趋势 -->
+            <div class="section">
+                <h2 class="section-title">市场趋势</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">银发消费规模约7万亿：刚需、健康、悦己三大核心驱动力确立</div>
+                    <div class="news-meta">
+                        来源：大众消费网 / 搜狐 | 发布日期：2026年5月15日 |
+                        <a href="https://m.sohu.com/a/1023072128_122756303/" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        行业数据显示，我国银发经济市场规模约7万亿元，刚需、健康、悦己成为银发消费三大核心驱动力。随着人口老龄化深入，银发消费边界持续延展：从银发旅游专列到特色兴趣课程，从适老化改造到AI陪伴产品，品质化、多元化的消费体验不断涌现。老年群体已不再满足于基础生存保障，而是追求品质化、多元化的生活方式，银发经济正从"养老"向"享老"全面升级。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            7万亿，数字已经很清晰了。三大驱动力里，"悦己"最值得关注——这意味着老年人的消费动机已经从"防病"升级为"享受生活"。这个转变对产品定义有根本性影响：不是做"老年版"，而是做"老年人真正想要的产品"，这对设计和研发能力的要求更高了。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">五一银发出游爆发：客单价增20%+，60岁以上占比41.53%成为出行主力</div>
+                    <div class="news-meta">
+                        来源：携程 / 同程旅行 | 发布日期：2026年5月 |
+                        <a href="http://www.ce.cn/cysc/newmain/yc/jsxw/202605/t20260504_2944430.shtml" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        同程旅行《2026"五一"旅行趋势报告》显示，五一出行游客平均年龄达49.34岁，60岁以上银发客群占比41.53%，成为假期出行主力。银发人群五一期间人均消费较平日增长超20%，客单价高于平台平均水平。活力银发人均文旅年支出达4000-5000元。携程数据显示，50岁以上用户消费为平台平均的3倍，银发旅游市场呈现"不凑热闹、错峰出行、讲究康养"的新趋势。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            41.53%的占比，这个数字太有说服力了——老年人已经不是旅游市场的补充，而是主力之一。客单价高于平均、年度支出4000-5000元，说明这个群体有真实购买力。"错峰出行、讲究康养"是关键特征，产品设计必须匹配：不是特种兵式观光，而是慢节奏、深体验、配套医疗保障的康养旅居。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">龙湖重启"椿山万树"三年十子，中海北京CCRC 6月启幕：头部房企逆势加码</div>
+                    <div class="news-meta">
+                        来源：睿和智库 | 发布日期：2026年5月 |
+                        <a href="https://c.m.163.com/news/a/KTCDPCH205158K7T.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        在万科、越秀等房企撤退之际，龙湖集团和中海却选择逆势加码。龙湖养老品牌"椿山万树"在暂停六年新项目拓展后宣布重启，计划未来三年内在全国开业近10个项目，底气来自集团运营及服务业务2025年营收267.7亿元（占集团总营收27.5%）、核心权益利润79.2亿元、毛利率超50%的强劲表现。中海康养则时隔六年落子北京，高端CCRC项目"中海康养·锦宸"将于2026年6月正式启幕，在营项目均获国标五星或四星认证，入住率超90%、客户满意度95%以上。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            这两家很有意思——它们不是因为"看好养老"就冲进来，而是因为主业够稳健，能撑得起养老这种长周期业务。龙湖的服务业务毛利率超50%，这是核心，没有这个底盘，养老就是空中楼阁。中海90%以上的入住率说明产品力是真的强。结论：能进场的，必须是主业造血能力强、产品真正过硬的玩家，进来凑热闹的都会被洗出去。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 技术创新 -->
+            <div class="section">
+                <h2 class="section-title">技术创新</h2>
+                
+                <div class="news-item">
+                    <div class="news-title">陪伴型机器人亮相老博会：感知情绪、预判跌倒，养老更"智慧"</div>
+                    <div class="news-meta">
+                        来源：央视新闻 | 发布日期：2026年5月20日 |
+                        <a href="https://tv.cctv.com/2026/05/20/VIDEuNXRbIAGs7SAexmD0aBf260520.shtml" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        第十二届中国国际养老服务业博览会正在北京举行，多款陪伴型机器人亮相，核心功能包括情感感知和跌倒预判。机器人可通过视觉和传感器识别老年人情绪状态，提供主动陪伴；同时通过步态分析和环境监测预判跌倒风险，提前发出预警。博览会上，从日常生活、健康管理到旅居康养，智能科技产品已进入养老服务方方面面，智能床垫、智能轮椅、AI中医诊断等产品也纷纷亮相。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            情感感知这个功能很关键——老年人最怕的不是身体上的照料，而是孤独。机器人能感知情绪，就意味着可以主动干预、主动陪伴，这比"响应式服务"进了一步。但也要泼冷水：技术成熟度还有空间，情绪识别的准确率、误报率，都是需要持续迭代的。别被酷炫的功能晃了眼，关键是老人用起来是否真的顺手。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">北京全球首个智慧康养机器人养老驿站运营，40余款产品覆盖全场景</div>
+                    <div class="news-meta">
+                        来源：陕西日报 | 发布日期：2026年5月19日 |
+                        <a href="https://esb.sxdaily.com.cn/pc/content/202605/19/content_2047363.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        全国首个机器人养老驿站在北京投入运营，40余款康养机器人产品覆盖餐饮、康复、陪伴等场景，通过远程看护、跌倒报警、用药提醒筑牢独居老人安全防线，并借助大数据与AI为老人定制个性化健康管理方案，推动养老服务从"被动响应"向"主动预防"转型。人机协同成为智慧养老新趋势，机器人承担标准化、高频次的照护任务，护理人员聚焦情感支持与专业医疗。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            40余款产品覆盖全场景，这个驿站更像是一个"产品 showroom"而不是真正的服务载体。但方向是对的——机器人做标准化任务，人做情感支持，这个分工本身就是效率的提升。关键问题：这套系统贵不贵？能不能复制到其他城市？如果只是北京一个标杆，那意义就有限。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">北京朝阳大望京智慧康养体验中心亮相：AI护理机器人、可穿戴大小便处理设备落地</div>
+                    <div class="news-meta">
+                        来源：北京日报 | 发布日期：2026年5月14日 |
+                        <a href="https://wap.bjd.com.cn/news/2026/05/14/11744084.shtml" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        朝阳区首个全场景智慧康养体验中心——大望京智慧康养体验中心正式亮相，这是朝阳区首个银发商城。体验中心涵盖适老厨房、卫浴、失能卧室、自理卧室及客厅等多个实景空间，展示了AI护理机器人（可24小时智能处理大小便并自动清洁，维护被照护者尊严并减轻护理人员负担）、富氧深睡枕（将周围氧气浓度提升至22.5%提升中老年人深睡眠时间）、防摔马甲、冻结步态康健仪等多种适老化科技产品。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            AI护理机器人处理大小便这个需求太真实了——这是护理人员最不愿意做、但又最高频的任务。能把这事做好的产品，解决了真正的痛点。但成本呢？一台多少钱？老人家庭能不能承受？这才是决定能否大规模推广的关键。希望有更多类似产品能把价格打下来，真正让普通家庭也能用得上。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <div class="news-title">北京朝阳区首个居家养老智慧医疗服务平台"万医生"上线：7×24小时私人医生团队</div>
+                    <div class="news-meta">
+                        来源：济南时报 | 发布日期：2026年5月18日 |
+                        <a href="https://sdxw.iqilu.com/share/YS0yMS0xNzIwMTM4OQ.html" target="_blank" class="news-link">查看原文</a>
+                    </div>
+                    <div class="news-summary">
+                        朝阳区首个居家养老智慧医疗服务平台——"万医生"正式上线，秉持"治未病，防万一"理念，构建"专科医生+保健医师+健康管理师+护士+居家照护师"五师协同的7×24小时服务团队。平台打通居家养老与医疗服务的最后一公里，为老年人提供常见病诊疗、健康监测、用药指导、远程会诊等一站式服务，推动居家养老从"生活照料"向"健康管理"全面升级。
+                    </div>
+                    <div class="comment-box">
+                        <div class="comment-label">宝总点评</div>
+                        <div class="comment-text">
+                            "五师协同"这个模式很有意思，把不同角色捏在一起，形成连续的居家服务链条。但核心问题是：谁付钱？老人自己付，成本太高；医保报销，能报多少？商保介入，门槛有多高？这个平台如果能找到稳定的支付方，才是真正可持续的模式，否则就是示范工程，无法复制。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 本周观察 -->
+            <div class="summary-section">
+                <h2 class="summary-title">本期观察</h2>
+                <div class="summary-text">
+                    <p>
+                        <strong>房企换手，险资接棒——养老产业的资本逻辑正在重写。</strong>本期最重磅的产业新闻是越秀283.82万出售42家康养公司、万科拟向新华保险出售北方5个康养项目，与此同时中国人寿85亿康养基金成立、中海龙湖逆势加码。这不是"逃离"，而是"换岗"：不适合长周期的资本退出，适合长周期的险资接棒，运营能力留存在市场中。"险资持有+专业机构运营"的新范式，正在替代"房企全链条自持"的旧模式，这是行业成熟的标志。
+                    </p>
+                    <p>
+                        <strong>政策端持续加密，落地质量是关键。</strong>吉林9部门联合发文、海南旅居养老新规、12部门推进互助性养老——政策密度持续上升。但看多了政策文件，我更关注落地质量：补贴到位了吗？标准谁来执行？监管跟上了吗？政策是发出来了，执行层面的差距才是真正的分水岭。
+                    </p>
+                    <p>
+                        <strong>AI康养机器人赛道半年吸金50亿，进入产业验证期。</strong>9笔融资、近50亿资金砸入，说明这个赛道已经被资本认可。但接下来考验的是产品力——能不能进医院、养老院真正跑起来，能不能产生复购，才是检验标准。这不是概念阶段了，是实战阶段。
+                    </p>
+                    <p>
+                        <strong>核心判断：运营能力成为核心稀缺资源。</strong>万科保留运营权、越秀将运营系统连同资产一并交付，说明运营能力才是这个行业的核心资产。能做出高入住率、高满意度、高效率的运营团队，将在整个养老产业的结构性转型中获得最大红利。这是做服务、做产品的创业者最好的时代窗口。
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2026 银发资讯 by 赵元宝 | zhaoyuanbao.com
+        </div>
+    </div>
+
+    <div class="site-counter" style="font-size:0.78rem;opacity:0.72;display:flex;gap:0.9rem;align-items:center;flex-wrap:wrap;">
+      <span id="busuanzi_container_site_pv">👁️ 总访问量 <strong id="busuanzi_value_site_pv">--</strong> 次</span>
+      <span id="busuanzi_container_site_uv">👤 访客数 <strong id="busuanzi_value_site_uv">--</strong> 人</span>
+    </div>
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>
