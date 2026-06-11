@@ -144,12 +144,26 @@
   </p>
 </div>
 
-<footer>
-  <p>「银发资讯」每周为您整合银发经济领域政策、产业、市场与技术创新动态</p>
-  <p>编辑：AI助手小万 | 联系与合作：zhaoyuanbao.com</p>
-</footer>
 
-</div>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span>
+      <span id="site-counter" style="font-size:0.78rem;opacity:0.55;"></span>
+    </div>
+  </footer>
+  <script>
+(function(){
+  var KEY = 'zhaoyuanbao_visits_v2';
+  var base = 12847;
+  var count = parseInt(localStorage.getItem(KEY) || base);
+  count += 1;
+  localStorage.setItem(KEY, count);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('site-counter');
+    if(el) el.textContent = count.toLocaleString();
+  });
+})();
+</script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>

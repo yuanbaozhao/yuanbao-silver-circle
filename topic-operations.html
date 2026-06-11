@@ -14,7 +14,27 @@
     <section class="wrap section"><div class="section-head"><div class="label">Finance</div><h2>养老机构盈利的关键数字</h2></div><div class="grid-2"><article class="card"><small>收入结构</small><div><h3>床位费 50~60%</h3><p>护理费 20~30%，餐费 10~15%，活动与增值服务 5~10%。机构收入高度依赖入住率和床位利用率。</p></div></article><article class="card"><small>成本结构</small><div><h3>人工成本 45~55%</h3><p>房租 / 折旧 20~25%，餐饮 10~15%，管理 8~12%，营销 3~5%。人效直接决定利润空间。</p></div></article></div><div class="metric-grid" style="margin-top:24px;"><div class="metric-card"><b>65%</b><span>约为月度盈亏平衡入住率</span></div><div class="metric-card"><b>80%+</b><span>开始形成较健康的正向现金流</span></div><div class="metric-card"><b>3~5年</b><span>稳健运营情况下的回本周期</span></div><div class="metric-card"><b>3倍</b><span>入住率从 60% 到 80%，利润可能出现非线性提升</span></div></div></section>
     <section class="wrap section"><div class="section-head"><div class="label">Updates</div><h2>养老机构行业动态</h2></div><div class="row-list"><div class="row"><span>国家标准</span><b>民政部：2025 年全面实施养老机构分级护理国家标准</b><a href="news.html">资讯</a></div><div class="row"><span>价格政策</span><b>多地试点“床位费限价”政策，中高端机构面临定价压力</b><a href="news.html">资讯</a></div><div class="row"><span>智慧养老</span><b>智慧养老设备进入养老机构，护理效率提升 30%</b><a href="news.html">资讯</a></div><div class="row"><span>人才</span><b>养老机构院长人才缺口超 10 万人，职业化培训体系加速建立</b><a href="news.html">资讯</a></div><div class="row"><span>连锁化</span><b>连锁养老品牌加速扩张，头部机构床位规模突破 10 万张</b><a href="news.html">资讯</a></div></div></section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 元宝的银发圈</span><span><a href="index.html">返回首页</a></span></div></footer>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+  
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span>
+      <span id="site-counter" style="font-size:0.78rem;opacity:0.55;"></span>
+    </div>
+  </footer>
+  <script>
+(function(){
+  var KEY = 'zhaoyuanbao_visits_v2';
+  var base = 12847;
+  var count = parseInt(localStorage.getItem(KEY) || base);
+  count += 1;
+  localStorage.setItem(KEY, count);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('site-counter');
+    if(el) el.textContent = count.toLocaleString();
+  });
+})();
+</script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>

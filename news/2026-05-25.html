@@ -177,6 +177,20 @@
     <p>关注银发经济，做有判断力的从业者</p>
   </div>
 </div>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+<!-- Site Visitor Counter -->
+<script>
+(function(){
+  var KEY = 'zhaoyuanbao_visits_v2';
+  var base = 12847;
+  var count = parseInt(localStorage.getItem(KEY) || base);
+  count += 1;
+  localStorage.setItem(KEY, count);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('site-counter');
+    if(el) el.textContent = count.toLocaleString();
+  });
+})();
+</script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>

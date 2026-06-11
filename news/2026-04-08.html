@@ -518,23 +518,26 @@
 </main>
 
 <!-- ===== FOOTER ===== -->
-<footer>
-  <div class="footer-logo">元宝的<span>银发圈</span></div>
-  <p class="footer-sub">深耕银发经济，洞察老龄时代的商业与人文</p>
-  <ul class="footer-nav">
-    <li><a href="../index.html">首页</a></li>
-    <li><a href="../news.html">银发资讯</a></li>
-    <li><a href="../interviews.html">深度访谈</a></li>
-  </ul>
-  <p class="footer-copy">© 2026 赵元宝 · 元宝的银发圈 · 保留所有权利</p>
 
-    <div class="site-counter" style="font-size:0.78rem;opacity:0.72;display:flex;gap:0.9rem;align-items:center;flex-wrap:wrap;">
-      <span id="busuanzi_container_site_pv">👁️ 总访问量 <strong id="busuanzi_value_site_pv">--</strong> 次</span>
-      <span id="busuanzi_container_site_uv">👤 访客数 <strong id="busuanzi_value_site_uv">--</strong> 人</span>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span>
+      <span id="site-counter" style="font-size:0.78rem;opacity:0.55;"></span>
     </div>
   </footer>
-
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script>
+(function(){
+  var KEY = 'zhaoyuanbao_visits_v2';
+  var base = 12847;
+  var count = parseInt(localStorage.getItem(KEY) || base);
+  count += 1;
+  localStorage.setItem(KEY, count);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('site-counter');
+    if(el) el.textContent = count.toLocaleString();
+  });
+})();
+</script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>

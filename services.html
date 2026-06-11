@@ -24,7 +24,27 @@
       <div class="cta"><a class="btn dark" href="index.html#contact">联系元宝</a><a class="btn" href="events.html">查看活动资源</a></div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 元宝的银发圈</span><span><a href="index.html">返回首页</a></span></div></footer>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+  
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span>
+      <span id="site-counter" style="font-size:0.78rem;opacity:0.55;"></span>
+    </div>
+  </footer>
+  <script>
+(function(){
+  var KEY = 'zhaoyuanbao_visits_v2';
+  var base = 12847;
+  var count = parseInt(localStorage.getItem(KEY) || base);
+  count += 1;
+  localStorage.setItem(KEY, count);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('site-counter');
+    if(el) el.textContent = count.toLocaleString();
+  });
+})();
+</script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>

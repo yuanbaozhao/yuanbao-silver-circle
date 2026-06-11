@@ -11,7 +11,27 @@
     <section class="wrap section"><div class="section-head"><div class="label">Products</div><h2>主要商业产品与选购建议</h2></div><div class="grid-4"><article class="card"><small>太平人寿</small><div><h3>太平惠琼宝</h3><p>覆盖重度失能护理津贴，投保年龄宽泛，趸交/年交灵活，适合补充保障。</p></div></article><article class="card"><small>平安健康</small><div><h3>平安守护长期护理险</h3><p>提供护理服务费用报销和护理机构网络直付，含健康管理增值服务。</p></div></article><article class="card"><small>泰康人寿</small><div><h3>泰康健护长期护理保险</h3><p>与泰康养老社区联动，购买产品可优先入住旗下护理公寓。</p></div></article><article class="card"><small>中国人寿</small><div><h3>国寿金色前程护理保险</h3><p>偏向增额护理，兼具护理保障与现金价值积累，适合作为养老资产规划一部分。</p></div></article></div></section>
     <section class="wrap section"><div class="section-head"><div class="label">Families</div><h2>失能家庭的真实故事</h2></div><div class="grid-2"><article class="card"><small>北京石景山区</small><div><h3>张阿姨家庭</h3><p>张阿姨 82 岁，脑梗后失能 5 年。申请长护险后评估为重度失能，每月可获得 1800 元居家护理费用报销，用于聘请专业护理员每天上门。</p></div></article><article class="card"><small>上海静安区</small><div><h3>王奶奶家庭</h3><p>王奶奶 76 岁，阿尔茨海默症早期。上海长护险重度失能入住护理机构报销比例达 85%，显著降低家庭支付压力。</p></div></article></div></section>
   </main>
-  <footer><div class="wrap footer-inner"><span>© 2026 元宝的银发圈</span><span><a href="index.html">返回首页</a></span></div></footer>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+  
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span>
+      <span id="site-counter" style="font-size:0.78rem;opacity:0.55;"></span>
+    </div>
+  </footer>
+  <script>
+(function(){
+  var KEY = 'zhaoyuanbao_visits_v2';
+  var base = 12847;
+  var count = parseInt(localStorage.getItem(KEY) || base);
+  count += 1;
+  localStorage.setItem(KEY, count);
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('site-counter');
+    if(el) el.textContent = count.toLocaleString();
+  });
+})();
+</script>
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>
