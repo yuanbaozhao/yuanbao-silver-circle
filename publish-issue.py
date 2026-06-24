@@ -203,10 +203,23 @@ def git_commit(date_str: str, issue: int):
 
 
 def main():
-    if len(sys.argv) < 2:
-        fail("用法: python3 publish-issue.py <日期 YYYY-MM-DD> [期号]\n  例如: python3 publish-issue.py 2026-07-01 17")
+    # 解析 --push 标志和 --help
+    auto_push = False
+    args = sys.argv[1:]
+    if "--help" in args or "-h" in args:
+        print("用法: python3 publish-issue.py <日期 YYYY-MM-DD> [期号] [--push]")
+        print("  例如: python3 publish-issue.py 2026-07-01")
+        print("        python3 publish-issue.py 2026-07-01 17")
+        print("        python3 publish-issue.py 2026-07-01 17 --push  # 发布后自动 push")
+        sys.exit(0)
+    if "--push" in args:
+        auto_push = True
+        args.remove("--push")
 
-    date_str = sys.argv[1]
+    if not args:
+        fail("用法: python3 publish-issue.py <日期 YYYY-MM-DD> [期号] [--push]\n  例如: python3 publish-issue.py 2026-07-01 17")
+
+    date_str = args[0]
     # 校验日期格式
     try:
         datetime.strptime(date_str, "%Y-%m-%d")
@@ -219,8 +232,11 @@ def main():
         fail(f"找不到内容页: {content_path}\n  请先把 {date_str}.html 放到 news/ 目录下")
 
     # 推断期号
-    if len(sys.argv) >= 3:
-        issue = int(sys.argv[2])
+    if len(args) >= 2:
+        try:
+            issue = int(args[1])
+        except ValueError:
+            fail(f"期号必须是整数: {args[1]}")
     else:
         issue = get_issue_number(date_str)
         print(f"   💡 推断期号: 第{issue}期（基于 news-data.json 现有最大值）")
@@ -246,9 +262,25 @@ def main():
     print(f"\n📦 Git 操作...")
     git_commit(date_str, issue)
 
-    print(f"\n🎉 完成！接下来你只需要:")
-    print(f"   git push origin main")
-    print(f"\n   30 秒后 GitHub Actions 会自动部署到 https://zhaoyuanbao.com")
+    if auto_push:
+        print(f"\n🚀 推送代码到 GitHub（自动部署）...")
+        result = subprocess.run(
+            ["git", "push", "origin", "main"],
+            cwd=ROOT, capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            print(f"   ✅ Push 成功！")
+            print(f"   30 秒后 GitHub Actions 会自动部署到 https://zhaoyuanbao.com")
+        else:
+            print(f"   ❌ Push 失败:")
+            print(f"   {result.stderr}")
+            print(f"\n   你可以手动跑: git push origin main")
+            sys.exit(1)
+    else:
+        print(f"\n🎉 完成！接下来你只需要:")
+        print(f"   git push origin main")
+        print(f"   （或加 --push 参数让脚本自动推）")
+        print(f"\n   30 秒后 GitHub Actions 会自动部署到 https://zhaoyuanbao.com")
 
 
 if __name__ == "__main__":
