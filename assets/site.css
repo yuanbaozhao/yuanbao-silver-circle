@@ -13,6 +13,46 @@
   --sans: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
 }
 
+/* Warm-future visual system shared by all secondary pages */
+:root {
+  --bg: #fff8ee;
+  --bg-soft: #f2edff;
+  --ink: #252335;
+  --ink-2: #58536a;
+  --muted: #8b8294;
+  --line: rgba(93, 75, 208, .14);
+  --line-strong: rgba(93, 75, 208, .28);
+  --green: #5d4bd0;
+  --gold: #ff6548;
+  --white: #fffdf9;
+}
+body {
+  background:
+    linear-gradient(90deg, rgba(93,75,208,.045) 1px, transparent 1px),
+    linear-gradient(rgba(93,75,208,.045) 1px, transparent 1px),
+    radial-gradient(circle at 88% 8%, rgba(116,91,225,.18), transparent 30rem),
+    radial-gradient(circle at 8% 78%, rgba(255,101,72,.14), transparent 32rem),
+    linear-gradient(145deg, #fffaf2 0%, #faf5f5 56%, #f1edff 100%);
+  background-size: 72px 72px,72px 72px,auto,auto,auto;
+}
+body::before { background: radial-gradient(circle at 76% 22%, rgba(255,101,72,.08), transparent 25rem); }
+.topbar { background: rgba(255,250,242,.86); box-shadow: 0 8px 30px rgba(74,55,145,.05); }
+.page-hero { position: relative; overflow: hidden; }
+.page-hero::after { content:""; position:absolute; width:360px; height:360px; right:5%; top:-180px; border:1px solid rgba(93,75,208,.2); border-radius:50%; box-shadow:0 0 0 52px rgba(255,101,72,.05),0 0 0 104px rgba(93,75,208,.04); pointer-events:none; }
+.card,.metric-card,.media-card,.table-wrap { border-radius: 20px; background: rgba(255,253,249,.78); box-shadow: 0 14px 40px rgba(74,55,145,.07); }
+.grid-2,.grid-3,.grid-4,.metric-grid { gap: 18px; border: 0; background: transparent; }
+.index-item,.row { transition: transform .22s ease, background .22s ease; }
+.index-item:hover,.row:hover { transform: translateX(6px); background: rgba(255,255,255,.42); }
+.quote { border-radius: 24px; background: linear-gradient(135deg,#ff694d,#6251d8); box-shadow:0 22px 55px rgba(93,75,208,.18); }
+.footer { background: #242036; }
+@media (max-width: 700px) {
+  .wrap { width:min(100% - 28px,1200px); }
+  .page-hero { min-height:360px; padding:68px 0 42px; }
+  .page-hero::after { width:220px; height:220px; right:-90px; top:-90px; }
+  .grid-2,.grid-3,.grid-4,.metric-grid { gap:14px; }
+  .card,.metric-card { border-radius:16px; }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--bg); }
 body {
