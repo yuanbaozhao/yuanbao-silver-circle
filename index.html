@@ -946,6 +946,18 @@
   </style>
 </head>
 <body>
+  <div class="opening" id="opening" aria-label="网站开场">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="opening-glow"></div>
+    <div class="opening-copy">
+      <span>YUANBAO · SILVER ECONOMY</span>
+      <h2>银发经济不是第三百六十一行<br><strong>是一行融入三百六十行</strong></h2>
+      <button id="enter-site" type="button">进入银发圈 <b>→</b></button>
+    </div>
+  </div>
+  <style>
+    .opening{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,#171425 0%,#2c2459 52%,#542d44 100%);color:#fff;transition:opacity .8s ease,visibility .8s ease}.opening.is-leaving{opacity:0;visibility:hidden}.opening canvas,.opening-glow{position:absolute;inset:0;width:100%;height:100%}.opening-glow{background:radial-gradient(circle at 50% 50%,rgba(255,105,77,.25),transparent 34%),radial-gradient(circle at 76% 18%,rgba(120,93,231,.28),transparent 30%);animation:openingPulse 3s ease-in-out infinite}.opening-copy{position:relative;z-index:2;width:min(980px,calc(100% - 36px));text-align:center}.opening-copy>span{display:block;margin-bottom:22px;color:#d5cffb;font-size:.76rem;font-weight:800;letter-spacing:.25em}.opening-copy h2{margin:0;color:#fff;font-size:clamp(2rem,5.2vw,5.3rem);line-height:1.23;text-shadow:0 12px 50px #0005}.opening-copy strong{color:#ff8168;font-weight:700}.opening-copy button{margin-top:36px;padding:13px 24px;border:1px solid #ffffff55;border-radius:99px;background:#ffffff14;color:#fff;font:inherit;cursor:pointer;backdrop-filter:blur(12px);transition:.25s}.opening-copy button:hover{background:#fff;color:#312651;transform:translateY(-2px)}.opening-copy button b{margin-left:8px}.visitor-panel{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.visitor-inner{display:grid;grid-template-columns:1.25fr repeat(3,1fr);gap:14px;align-items:stretch}.visitor-intro,.visitor-item{padding:22px;border:1px solid rgba(91,69,214,.14);border-radius:18px;background:#fffdf9b8}.visitor-intro small{color:#ff6548;font-weight:800;letter-spacing:.13em}.visitor-intro h3{margin:8px 0 0;font-size:1.35rem}.visitor-item{display:grid;gap:6px}.visitor-item span{color:var(--muted);font-size:.78rem}.visitor-item b{font-size:1rem;overflow-wrap:anywhere}@keyframes openingPulse{50%{transform:scale(1.08);opacity:.72}}@media(prefers-reduced-motion:reduce){.opening-glow{animation:none}}@media(max-width:760px){.opening-copy h2{font-size:clamp(2rem,9vw,3.4rem)}.visitor-inner{grid-template-columns:1fr 1fr}.visitor-intro{grid-column:1/-1}}@media(max-width:430px){.visitor-inner{grid-template-columns:1fr}}
+  </style>
   <header class="topbar">
     <div class="wrap topbar-inner">
       <a class="brand" href="#top" aria-label="返回首页">
@@ -1265,6 +1277,7 @@
 
   
 
+  <section class="visitor-panel" aria-label="访客记录"><div class="wrap visitor-inner"><div class="visitor-intro"><small>VISITOR FOOTPRINT</small><h3>感谢每一次抵达与关注</h3></div><div class="visitor-item"><span>您的访问次数</span><b id="visitor-count">—</b></div><div class="visitor-item"><span>本次到访</span><b id="visitor-time">—</b></div><div class="visitor-item"><span>访问设备</span><b id="visitor-device">—</b></div></div></section>
   <footer>
     <div class="wrap footer-inner">
       <span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span>
@@ -1273,15 +1286,16 @@
   </footer>
   <script>
 (function(){
-  var KEY = 'zhaoyuanbao_visits_v2';
-  var base = 12847;
-  var count = parseInt(localStorage.getItem(KEY) || base);
-  count += 1;
-  localStorage.setItem(KEY, count);
-  document.addEventListener('DOMContentLoaded', function(){
-    var el = document.getElementById('site-counter');
-    if(el) el.textContent = count.toLocaleString();
-  });
+  var opening=document.getElementById('opening'),canvas=document.getElementById('particle-canvas'),ctx=canvas.getContext('2d'),particles=[],raf;
+  function size(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+  function seed(){particles=[];var n=innerWidth<700?42:90;for(var i=0;i<n;i++)particles.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.8+.5})}
+  function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(var i=0;i<particles.length;i++){var p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>innerWidth)p.vx*=-1;if(p.y<0||p.y>innerHeight)p.vy*=-1;ctx.beginPath();ctx.fillStyle=i%3?'rgba(255,255,255,.58)':'rgba(255,126,99,.9)';ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();for(var j=i+1;j<particles.length;j++){var q=particles[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);if(d<115){ctx.beginPath();ctx.strokeStyle='rgba(183,168,255,'+(.12*(1-d/115))+')';ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}}raf=requestAnimationFrame(draw)}
+  function enter(){opening.classList.add('is-leaving');cancelAnimationFrame(raf);setTimeout(function(){opening.remove()},850)}
+  size();seed();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)draw();else draw();addEventListener('resize',function(){size();seed()});document.getElementById('enter-site').onclick=enter;setTimeout(enter,6200);
+  var KEY='yuanbao_personal_visits_v3',count=parseInt(localStorage.getItem(KEY)||'0',10)+1;localStorage.setItem(KEY,count);
+  var now=new Date(),device=/Mobi|Android/i.test(navigator.userAgent)?'移动设备':'电脑端';
+  document.getElementById('visitor-count').textContent='第 '+count+' 次';document.getElementById('visitor-time').textContent=now.toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});document.getElementById('visitor-device').textContent=device;
+  var counter=document.getElementById('site-counter');if(counter)counter.textContent='真实访问数据由 Vercel Analytics 记录';
 })();
 </script>
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
