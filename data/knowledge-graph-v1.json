@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "project": "元宝的银发圈",
+  "updated_at": "2026-07-18",
+  "nodes": [
+    {
+      "id": "wiki_silver_economy",
+      "type": "WIKI",
+      "name": "银发经济",
+      "url": "wiki-silver-economy.html",
+      "status": "Reviewed",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "wiki_home_care",
+      "type": "WIKI",
+      "name": "居家养老",
+      "url": "wiki-home-care.html",
+      "status": "Reviewed",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "wiki_community_care",
+      "type": "WIKI",
+      "name": "社区养老",
+      "url": "wiki-community-care.html",
+      "status": "Reviewed",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "wiki_ltc_insurance",
+      "type": "WIKI",
+      "name": "长期护理保险",
+      "url": "wiki-ltc-insurance.html",
+      "status": "Reviewed",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "wiki_escort_care",
+      "type": "WIKI",
+      "name": "陪诊服务",
+      "url": "wiki-escort-care.html",
+      "status": "Reviewed",
+      "updated_at": "2026-07-18"
+    },
+    {
+      "id": "wiki_silver_travel",
+      "type": "WIKI",
+      "name": "银发旅居",
+      "url": "wiki-silver-travel.html",
+      "status": "Reviewed",
+      "updated_at": "2026-07-18"
+    }
+  ],
+  "edges": [],
+  "relation_types": [
+    "FOUNDED_BY",
+    "MANAGED_BY",
+    "WORKS_FOR",
+    "BELONGS_TO",
+    "PROVIDES",
+    "SERVES",
+    "OPERATES_IN",
+    "GOVERNED_BY",
+    "SUPPORTS",
+    "RESTRICTS",
+    "PARTNERS_WITH",
+    "INVESTED_IN",
+    "ACQUIRED",
+    "COMPETES_WITH",
+    "SUPPLIES_TO",
+    "CUSTOMER_OF",
+    "RELATED_TO",
+    "REPORTS_ON",
+    "PARTICIPATED_IN",
+    "CASE_OF",
+    "REFERENCES",
+    "EVIDENCED_BY"
+  ],
+  "status_note": "V1 初始文件仅录入已完成 Reviewed 的百科节点；事实关系将在来源审校后逐条加入。"
+}
