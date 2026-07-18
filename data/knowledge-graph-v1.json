@@ -3,79 +3,25 @@
   "project": "元宝的银发圈",
   "updated_at": "2026-07-18",
   "nodes": [
-    {
-      "id": "wiki_silver_economy",
-      "type": "WIKI",
-      "name": "银发经济",
-      "url": "wiki-silver-economy.html",
-      "status": "Reviewed",
-      "updated_at": "2026-07-18"
-    },
-    {
-      "id": "wiki_home_care",
-      "type": "WIKI",
-      "name": "居家养老",
-      "url": "wiki-home-care.html",
-      "status": "Reviewed",
-      "updated_at": "2026-07-18"
-    },
-    {
-      "id": "wiki_community_care",
-      "type": "WIKI",
-      "name": "社区养老",
-      "url": "wiki-community-care.html",
-      "status": "Reviewed",
-      "updated_at": "2026-07-18"
-    },
-    {
-      "id": "wiki_ltc_insurance",
-      "type": "WIKI",
-      "name": "长期护理保险",
-      "url": "wiki-ltc-insurance.html",
-      "status": "Reviewed",
-      "updated_at": "2026-07-18"
-    },
-    {
-      "id": "wiki_escort_care",
-      "type": "WIKI",
-      "name": "陪诊服务",
-      "url": "wiki-escort-care.html",
-      "status": "Reviewed",
-      "updated_at": "2026-07-18"
-    },
-    {
-      "id": "wiki_silver_travel",
-      "type": "WIKI",
-      "name": "银发旅居",
-      "url": "wiki-silver-travel.html",
-      "status": "Reviewed",
-      "updated_at": "2026-07-18"
-    }
+    {"id":"wiki_silver_economy","type":"WIKI","name":"银发经济","url":"wiki-silver-economy.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"wiki_home_care","type":"WIKI","name":"居家养老","url":"wiki-home-care.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"wiki_community_care","type":"WIKI","name":"社区养老","url":"wiki-community-care.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"wiki_ltc_insurance","type":"WIKI","name":"长期护理保险","url":"wiki-ltc-insurance.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"wiki_escort_care","type":"WIKI","name":"陪诊服务","url":"wiki-escort-care.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"wiki_silver_travel","type":"WIKI","name":"银发旅居","url":"wiki-silver-travel.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"company_taikang_community","type":"COMPANY","name":"泰康之家","url":"company-taikang-community.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"company_fushoukang","type":"COMPANY","name":"福寿康","url":"company-fushoukang.html","status":"Reviewed","updated_at":"2026-07-18"},
+    {"id":"company_joru","type":"COMPANY","name":"九如城","url":"company-joru.html","status":"Reviewed","updated_at":"2026-07-18"}
   ],
-  "edges": [],
-  "relation_types": [
-    "FOUNDED_BY",
-    "MANAGED_BY",
-    "WORKS_FOR",
-    "BELONGS_TO",
-    "PROVIDES",
-    "SERVES",
-    "OPERATES_IN",
-    "GOVERNED_BY",
-    "SUPPORTS",
-    "RESTRICTS",
-    "PARTNERS_WITH",
-    "INVESTED_IN",
-    "ACQUIRED",
-    "COMPETES_WITH",
-    "SUPPLIES_TO",
-    "CUSTOMER_OF",
-    "RELATED_TO",
-    "REPORTS_ON",
-    "PARTICIPATED_IN",
-    "CASE_OF",
-    "REFERENCES",
-    "EVIDENCED_BY"
+  "edges": [
+    {"id":"edge_0001","from":"company_taikang_community","to":"wiki_silver_economy","relation":"RELATED_TO","evidence_level":"A","confidence":"high","status":"Reviewed","source":"泰康之家企业介绍与集团官网","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"},
+    {"id":"edge_0002","from":"company_fushoukang","to":"wiki_home_care","relation":"RELATED_TO","evidence_level":"A","confidence":"high","status":"Reviewed","source":"福寿康官网业务介绍","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"},
+    {"id":"edge_0003","from":"company_fushoukang","to":"wiki_community_care","relation":"RELATED_TO","evidence_level":"A","confidence":"high","status":"Reviewed","source":"福寿康官网业务介绍","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"},
+    {"id":"edge_0004","from":"company_fushoukang","to":"wiki_ltc_insurance","relation":"GOVERNED_BY","evidence_level":"B","confidence":"medium","status":"Reviewed","source":"企业官网及上海虹口政府公开资料","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"},
+    {"id":"edge_0005","from":"company_joru","to":"wiki_home_care","relation":"RELATED_TO","evidence_level":"A","confidence":"high","status":"Reviewed","source":"九如城集团核心业务页面","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"},
+    {"id":"edge_0006","from":"company_joru","to":"wiki_community_care","relation":"RELATED_TO","evidence_level":"A","confidence":"high","status":"Reviewed","source":"九如城集团核心业务页面","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"},
+    {"id":"edge_0007","from":"company_joru","to":"wiki_silver_travel","relation":"RELATED_TO","evidence_level":"A","confidence":"high","status":"Reviewed","source":"九如城集团旅居业务页面","valid_from":null,"valid_to":null,"reviewed_at":"2026-07-18"}
   ],
-  "status_note": "V1 初始文件仅录入已完成 Reviewed 的百科节点；事实关系将在来源审校后逐条加入。"
+  "relation_types": ["FOUNDED_BY","MANAGED_BY","WORKS_FOR","BELONGS_TO","PROVIDES","SERVES","OPERATES_IN","GOVERNED_BY","SUPPORTS","RESTRICTS","PARTNERS_WITH","INVESTED_IN","ACQUIRED","COMPETES_WITH","SUPPLIES_TO","CUSTOMER_OF","RELATED_TO","REPORTS_ON","PARTICIPATED_IN","CASE_OF","REFERENCES","EVIDENCED_BY"],
+  "status_note": "V1 已录入首批三个 Reviewed 企业节点及其与现有百科词条之间的初始事实关系。"
 }
