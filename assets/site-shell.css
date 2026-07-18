@@ -282,6 +282,8 @@
   }
 
   .yb-nav {
+    min-width: 0;
+    max-width: 100%;
     position: static;
     order: 3;
     width: 100%;

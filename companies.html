@@ -1,1 +1,181 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>银发企业库｜元宝的银发圈</title><meta name="description" content="元宝的银发圈银发企业数据库：企业事实、商业模式、关系网络与AI研究判断。"><link rel="stylesheet" href="assets/site-shell.css"><style>:root{--bg:#f6f1e8;--ink:#111615;--muted:#727a75;--line:rgba(17,22,21,.14);--green:#183d36;--gold:#9a7435;--soft:#ebe4d7;--serif:"Songti SC","Noto Serif SC",Georgia,serif}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#fbf8f1,var(--bg),#e9e1d3)}a{color:inherit;text-decoration:none}.wrap{width:min(1200px,calc(100% - 44px));margin:auto}.hero{padding:55px 0 40px;display:grid;grid-template-columns:1fr 320px;gap:50px;align-items:end}.eyebrow{color:var(--gold);font-size:.76rem;font-weight:900;letter-spacing:.14em}.hero h1{margin:16px 0 22px;font:700 clamp(3.4rem,7vw,7rem)/.96 var(--serif)}.hero h1 em{display:block;color:var(--green);font-style:normal}.lead{max-width:760px;color:#34403c;line-height:1.9}.summary{padding:24px;border:1px solid var(--line);background:#fffaf0}.summary b{display:block;color:var(--green);font:700 2.3rem var(--serif)}.search-panel{padding:26px;border-radius:20px;background:var(--green);color:#fff}.search-row{display:grid;grid-template-columns:1fr 180px 180px auto;gap:10px}.search-row input,.search-row select,.search-row button{min-height:48px;border:0;border-radius:10px;padding:0 14px;font:inherit}.search-row button{color:#fff;background:var(--gold);font-weight:800}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.filter{border:1px solid #ffffff3b;border-radius:999px;padding:8px 12px;color:#e9eee9;background:#ffffff0d}.filter.active{color:var(--green);background:#fff}.section{padding:68px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}.head h2{margin:0;font:700 clamp(2rem,4vw,3.8rem) var(--serif)}.head p{max-width:620px;color:var(--muted);line-height:1.8}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{min-height:310px;display:grid;align-content:space-between;padding:24px}.card h3{margin:18px 0 10px;font:700 1.7rem var(--serif)}.card p{color:#45504c;line-height:1.75}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.meta span{padding:6px 8px;background:var(--soft);font-size:.74rem}.state{margin-top:18px;color:var(--muted);font-size:.76rem}.arrow{margin-top:16px;color:var(--gold);font-weight:800}.architecture{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}.arch{min-height:190px;padding:22px;background:#fffdf8}.arch b{color:var(--gold)}.arch h3{font:700 1.3rem var(--serif)}.arch p{color:var(--muted);line-height:1.7}.empty{padding:42px;text-align:center;color:var(--muted)}@media(max-width:900px){.hero{grid-template-columns:1fr}.search-row{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,1fr)}.architecture{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.wrap{width:min(100% - 28px,1200px)}.search-row,.grid,.architecture{grid-template-columns:1fr}.head{display:grid}}</style></head><body data-page="companies" data-title="银发企业库" data-updated="2026-07-18"><main><section class="wrap hero"><div><div class="eyebrow">COMPANY DATABASE · REVIEWED CASES</div><h1>银发企业<em>知识数据库</em></h1><p class="lead">把企业主体、业务结构、商业模式、公开规模、政策环境和行业判断连接起来，形成可检索、可核验、可持续更新的产业知识资产。</p></div><aside class="summary"><b>3 家</b><p>首批标杆案例覆盖保险养老社区、居家整合照护与城市综合康养运营三种模式。</p></aside></section><section class="wrap"><div class="search-panel"><div class="search-row"><input id="search" type="search" placeholder="搜索企业、模式、业务或标签"><select id="region"><option value="全部">全部地区</option><option>北京</option><option>上海</option></select><select id="status"><option value="全部">全部状态</option><option>Reviewed</option></select><button id="search-btn">搜索</button></div><div class="filters" id="filters"><button class="filter active" data-filter="全部">全部</button><button class="filter" data-filter="养老服务">养老服务</button><button class="filter" data-filter="医疗健康与照护">医疗健康</button><button class="filter" data-filter="养老金融与保险">金融保险</button></div></div></section><section class="wrap section"><div class="head"><h2>首批标杆案例</h2><p>统一呈现发展时间轴、商业模式、规模口径、SWOT、国内外对标、AI重构空间和《宝总点评》。</p></div><div class="grid" id="company-grid"></div><div class="empty" id="empty" hidden>没有找到符合条件的企业档案。</div></section><section class="wrap section"><div class="head"><h2>一家公司，四层价值</h2><p>事实与企业自述分开，研究判断不冒充经营数据，动态规模保留日期与来源口径。</p></div><div class="architecture"><article class="arch"><b>01 · FACT</b><h3>事实层</h3><p>主体、时间、地区、产品、规模及来源。</p></article><article class="arch"><b>02 · BUSINESS</b><h3>商业层</h3><p>客户、付费方、交付、增长和价值链。</p></article><article class="arch"><b>03 · NETWORK</b><h3>关系层</h3><p>百科、政策、人物、模式和可比企业。</p></article><article class="arch"><b>04 · INSIGHT</b><h3>判断层</h3><p>护城河、风险、对标、AI机会与行业启发。</p></article></div></section></main><script>const companies=[{name:'泰康之家',cat:'养老金融与保险',region:'北京',status:'Reviewed',url:'company-taikang-community.html',desc:'保险资本、持续照护社区与医养融合构成的长期客户经营体系。',tags:['CCRC','医养结合','城市养联体']},{name:'福寿康',cat:'医疗健康与照护',region:'上海',status:'Reviewed',url:'company-fushoukang.html',desc:'长期护理保险、护理站点和数字平台共同形成的社区居家整合照护网络。',tags:['居家照护','长护险','数智平台']},{name:'九如城',cat:'养老服务',region:'上海',status:'Reviewed',url:'company-joru.html',desc:'以机构为区域支点，连接康复医疗、社区中心与居家服务的城市养老运营平台。',tags:['四级体系','公建民营','城市网络']}];let active='全部';const grid=document.getElementById('company-grid'),empty=document.getElementById('empty'),search=document.getElementById('search'),region=document.getElementById('region'),status=document.getElementById('status');function render(){const q=search.value.trim().toLowerCase();const list=companies.filter(c=>(active==='全部'||c.cat===active)&&(region.value==='全部'||c.region===region.value)&&(status.value==='全部'||c.status===status.value)&&(!q||[c.name,c.cat,c.desc,...c.tags].join(' ').toLowerCase().includes(q)));grid.innerHTML=list.map(c=>`<a class="card yb-card" href="${c.url}"><div><span class="yb-pill">${c.status}</span><h3>${c.name}</h3><p>${c.desc}</p><div class="meta">${c.tags.map(t=>`<span>${t}</span>`).join('')}</div></div><div><div class="state">地区：${c.region} · 档案状态：${c.status}</div><div class="arrow">查看完整案例研究 →</div></div></a>`).join('');empty.hidden=!!list.length}document.getElementById('filters').onclick=e=>{if(!e.target.matches('.filter'))return;document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));e.target.classList.add('active');active=e.target.dataset.filter;render()};document.getElementById('search-btn').onclick=render;[search,region,status].forEach(el=>el.oninput=render);render();</script><script src="assets/site-shell.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>银发企业库｜元宝的银发圈</title>
+  <meta name="description" content="元宝的银发圈银发企业数据库：企业事实、商业模式、关系网络与AI研究判断。">
+  <link rel="stylesheet" href="assets/site-shell.css">
+  <style>
+    :root{--bg:#f6f1e8;--ink:#111615;--muted:#727a75;--line:rgba(17,22,21,.14);--green:#183d36;--gold:#9a7435;--soft:#ebe4d7;--paper:#fffdf8;--serif:"Songti SC","Noto Serif SC",Georgia,serif}
+    *{box-sizing:border-box}
+    body{margin:0;overflow-x:hidden;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#fbf8f1,var(--bg),#e9e1d3)}
+    a{color:inherit;text-decoration:none}
+    button,input,select{font:inherit}
+    .wrap{width:min(1200px,calc(100% - 44px));margin:auto}
+    .hero{min-width:0;padding:55px 0 40px;display:grid;grid-template-columns:1fr 360px;gap:50px;align-items:end}
+    .hero>*{min-width:0}
+    .eyebrow{max-width:100%;overflow-wrap:anywhere;color:var(--gold);font-size:.76rem;font-weight:900;letter-spacing:.14em}
+    .hero h1{margin:16px 0 22px;font:700 clamp(3.4rem,7vw,7rem)/.96 var(--serif)}
+    .hero h1 em{display:block;color:var(--green);font-style:normal}
+    .lead{max-width:780px;overflow-wrap:anywhere;word-break:break-word;color:#34403c;line-height:1.9}
+    .summary{min-width:0;max-width:100%;padding:24px;border:1px solid var(--line);background:#fffaf0}
+    .summary b{display:block;color:var(--green);font:700 2.3rem var(--serif)}
+    .summary p{margin:10px 0 0;overflow-wrap:anywhere;word-break:break-word;color:var(--muted);line-height:1.8}
+    .search-panel{min-width:0;max-width:100%;padding:26px;border-radius:20px;background:var(--green);color:#fff}
+    .search-row{display:grid;grid-template-columns:1fr 180px 180px auto;gap:10px}
+    .search-row input,.search-row select,.search-row button{min-width:0;min-height:48px;border:0;border-radius:10px;padding:0 14px}
+    .search-row button{color:#fff;background:var(--gold);font-weight:800;cursor:pointer}
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .filter{border:1px solid #ffffff3b;border-radius:999px;padding:8px 12px;color:#e9eee9;background:#ffffff0d;cursor:pointer}
+    .filter.active{color:var(--green);background:#fff}
+    .section{padding:68px 0}
+    .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}
+    .head h2{margin:0;font:700 clamp(2rem,4vw,3.8rem) var(--serif)}
+    .head p{max-width:650px;color:var(--muted);line-height:1.8}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{min-width:0;min-height:335px;display:grid;align-content:space-between;padding:24px;border:1px solid var(--line);background:rgba(255,253,248,.78);transition:.2s}
+    a.card:hover{transform:translateY(-3px);background:#fff}
+    .card h3{margin:18px 0 10px;font:700 1.7rem var(--serif)}
+    .card p{color:#45504c;line-height:1.75}
+    .topline{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .pill{width:max-content;border-radius:999px;padding:6px 9px;background:#e1ebe6;color:var(--green);font-size:.7rem;font-weight:900}
+    .pill.candidate{background:#f3ead7;color:#7a5524}
+    .meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+    .meta span{padding:6px 8px;background:var(--soft);font-size:.74rem}
+    .state{margin-top:18px;color:var(--muted);font-size:.76rem;line-height:1.7}
+    .arrow{margin-top:16px;color:var(--gold);font-weight:800}
+    .source{margin-top:12px;color:var(--muted);font-size:.74rem}
+    .source a{border-bottom:1px solid var(--line)}
+    .architecture{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--line);background:var(--line)}
+    .arch{min-height:190px;padding:22px;background:var(--paper)}
+    .arch b{color:var(--gold)}
+    .arch h3{font:700 1.3rem var(--serif)}
+    .arch p{color:var(--muted);line-height:1.7}
+    .empty{padding:42px;text-align:center;color:var(--muted)}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.search-row{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,1fr)}.architecture{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.wrap{width:min(100% - 28px,1200px)}.search-row,.grid,.architecture{grid-template-columns:1fr}.head{display:grid}.hero h1{font-size:3rem}.card{min-height:auto}.summary{padding:22px}.search-panel{padding:22px}}
+  </style>
+</head>
+<body data-page="companies" data-title="银发企业库" data-updated="2026-07-18">
+  <main>
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">COMPANY DATABASE</div>
+        <h1>银发企业<em>知识数据库</em></h1>
+        <p class="lead">把企业主体、业务结构、商业模式、公开规模、政策环境和行业判断连接起来，形成可检索、可核验、可持续更新的产业知识资产。</p>
+      </div>
+      <aside class="summary">
+        <b>13 家</b>
+        <p>已收录 3 家已审校标杆案例与 10 家候选档案；候选档案仅代表已进入研究队列，不等同于完成深度审校。</p>
+      </aside>
+    </section>
+
+    <section class="wrap">
+      <div class="search-panel">
+        <div class="search-row">
+          <input id="search" type="search" placeholder="搜索企业、模式、业务或标签">
+          <select id="region">
+            <option value="全部">全部地区</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>广州</option>
+            <option>深圳</option>
+            <option>全国</option>
+          </select>
+          <select id="status">
+            <option value="全部">全部状态</option>
+            <option>Reviewed</option>
+            <option>Candidate</option>
+          </select>
+          <button id="search-btn" type="button">搜索</button>
+        </div>
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="全部">全部</button>
+          <button class="filter" data-filter="养老服务">养老服务</button>
+          <button class="filter" data-filter="医疗健康与照护">医疗健康</button>
+          <button class="filter" data-filter="养老金融与保险">金融保险</button>
+          <button class="filter" data-filter="基础设施与产业服务">产业服务</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="head">
+        <h2>企业档案</h2>
+        <p>Reviewed 企业已完成详情页；Candidate 企业先进入数据库索引，后续再补主体、规模口径、商业模式、知识图谱关系和宝总点评。</p>
+      </div>
+      <div class="grid" id="company-grid"></div>
+      <div class="empty" id="empty" hidden>没有找到符合条件的企业档案。</div>
+    </section>
+
+    <section class="wrap section">
+      <div class="head">
+        <h2>一家公司，四层价值</h2>
+        <p>事实与企业自述分开，研究判断不冒充经营数据，动态规模保留日期与来源口径。</p>
+      </div>
+      <div class="architecture">
+        <article class="arch"><b>01 · FACT</b><h3>事实层</h3><p>主体、时间、地区、产品、规模及来源。</p></article>
+        <article class="arch"><b>02 · BUSINESS</b><h3>商业层</h3><p>客户、付费方、交付、增长和价值链。</p></article>
+        <article class="arch"><b>03 · NETWORK</b><h3>关系层</h3><p>百科、政策、人物、模式和可比企业。</p></article>
+        <article class="arch"><b>04 · INSIGHT</b><h3>判断层</h3><p>护城河、风险、对标、AI机会与行业启发。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const companies = [
+      {slug:'taikang-community',name:'泰康之家',cat:'养老金融与保险',region:'北京',status:'Reviewed',url:'company-taikang-community.html',desc:'保险资本、持续照护社区与医养融合构成的长期客户经营体系。',tags:['CCRC','医养结合','城市养联体'],source:'企业详情页已审校'},
+      {slug:'fushoukang',name:'福寿康',cat:'医疗健康与照护',region:'上海',status:'Reviewed',url:'company-fushoukang.html',desc:'长期护理保险、护理站点和数字平台共同形成的社区居家整合照护网络。',tags:['居家照护','长护险','数智平台'],source:'企业详情页已审校'},
+      {slug:'joru',name:'九如城',cat:'养老服务',region:'上海',status:'Reviewed',url:'company-joru.html',desc:'以机构为区域支点，连接康复医疗、社区中心与居家服务的城市养老运营平台。',tags:['四级体系','公建民营','城市网络'],source:'企业详情页已审校'},
+      {slug:'chunxuanmao',name:'椿萱茂',cat:'养老服务',region:'北京',status:'Candidate',desc:'远洋集团旗下高品质健康养老服务品牌，覆盖机构养老、居家养老、医疗业务和委托管理等方向。',tags:['机构养老','失智照护','委托管理'],source:'椿萱茂官网',sourceUrl:'https://www.chunxuanmao.com/chengshi.html'},
+      {slug:'sino-ocean-chunxuanmao',name:'远洋椿萱茂',cat:'基础设施与产业服务',region:'北京',status:'Candidate',desc:'作为远洋集团养老服务业务与椿萱茂品牌关系的独立索引，用于区分集团背景、品牌运营和项目资产。',tags:['远洋集团','品牌归属','养老服务平台'],source:'远洋集团养老服务页',sourceUrl:'https://www.sinooceangroup.com/zh-cn/Business/SinoOceanSeniorLiving.html'},
+      {slug:'qinheyuan',name:'亲和源',cat:'养老服务',region:'上海',status:'Candidate',desc:'以上海亲和源老年公寓、会员制养老社区、秘书式服务和康复护理为核心的养老生活方式品牌。',tags:['会员制社区','秘书式服务','康复护理'],source:'亲和源官网',sourceUrl:'https://www.qinheyuan.com/'},
+      {slug:'yuecheng-senior-care',name:'乐成养老',cat:'养老服务',region:'北京',status:'Candidate',desc:'乐成集团养老板块，旗下恭和苑、恭和老年公寓、恭和家园等项目代表城市机构养老运营路径。',tags:['恭和苑','医养结合','城市机构'],source:'乐成集团官网',sourceUrl:'https://www.yuechenggroup.com/'},
+      {slug:'chinalife-caregarden',name:'国寿嘉园',cat:'养老金融与保险',region:'北京',status:'Candidate',desc:'中国人寿旗下国寿健投打造的专业养老服务运营品牌，覆盖养老社区、康养旅居、社区和居家等业态。',tags:['中国人寿','医养结合','康养旅居'],source:'国寿嘉园官网',sourceUrl:'https://www.chinalife-gsjy.com/index.html'},
+      {slug:'poly-hexihui',name:'保利和熹会',cat:'养老服务',region:'广州',status:'Candidate',desc:'保利健投旗下高端养老机构连锁品牌，围绕医养结合型中心和多城候鸟式养老体验展开。',tags:['央企康养','医养结合','多城连锁'],source:'保利健投官网',sourceUrl:'https://www.poly-health.cn/'},
+      {slug:'cmg-guanyi',name:'招商观颐',cat:'养老服务',region:'深圳',status:'Candidate',desc:'招商蛇口旗下康养医护专业服务机构，已在深圳、杭州等城市形成养老机构与CCRC项目案例。',tags:['招商蛇口','认知症照护','CCRC'],source:'深圳南山区公开信息',sourceUrl:'https://www.szns.gov.cn/bsfw/nsqyljgmc/szsnsqzsgyzj/content/post_9448040.html'},
+      {slug:'starcastle',name:'星堡',cat:'养老服务',region:'上海',status:'Candidate',desc:'复星康养旗下高品质活力养老机构，定位持续全程照料型养老社区。',tags:['复星康养','活力养老','CCRC'],source:'复星康养官网',sourceUrl:'https://www.fosuncare.cn/Sungin-Introduce/'},
+      {slug:'cpic-senior-living',name:'太保家园',cat:'养老金融与保险',region:'上海',status:'Candidate',desc:'中国太保旗下养老社区品牌，围绕保险产品、养老社区和专业服务形成康养服务闭环。',tags:['中国太保','保险+养老','颐养社区'],source:'太保家园官网',sourceUrl:'https://tbjy.cpic.com.cn/tbjy/gywm/'},
+      {slug:'fosun-care',name:'复星康养',cat:'医疗健康与照护',region:'上海',status:'Candidate',desc:'复星旗下核心康养平台，旗下包含复星星堡、星健、蜂邻等养老与照护品牌。',tags:['复星星堡','星健','社区居家照护'],source:'复星康养官网',sourceUrl:'https://www.fosuncare.cn/Sungin-Introduce/'}
+    ];
+
+    let active = '全部';
+    const grid = document.getElementById('company-grid');
+    const empty = document.getElementById('empty');
+    const search = document.getElementById('search');
+    const region = document.getElementById('region');
+    const status = document.getElementById('status');
+
+    function card(c) {
+      const source = c.sourceUrl ? `<div class="source">来源：<a href="${c.sourceUrl}" target="_blank" rel="noopener">${c.source}</a></div>` : `<div class="source">来源：${c.source}</div>`;
+      const body = `<div><div class="topline"><span class="pill ${c.status === 'Candidate' ? 'candidate' : ''}">${c.status}</span><span class="pill">${c.cat}</span></div><h3>${c.name}</h3><p>${c.desc}</p><div class="meta">${c.tags.map(t => `<span>${t}</span>`).join('')}</div>${source}</div><div><div class="state">地区：${c.region} · 档案状态：${c.status}</div><div class="arrow">${c.url ? '查看完整案例研究 →' : '候选档案待补充 →'}</div></div>`;
+      return c.url ? `<a class="card" id="company-${c.slug}" href="${c.url}">${body}</a>` : `<article class="card" id="company-${c.slug}">${body}</article>`;
+    }
+
+    function render() {
+      const q = search.value.trim().toLowerCase();
+      const list = companies.filter(c =>
+        (active === '全部' || c.cat === active) &&
+        (region.value === '全部' || c.region === region.value) &&
+        (status.value === '全部' || c.status === status.value) &&
+        (!q || [c.name,c.cat,c.region,c.status,c.desc,c.source,...c.tags].join(' ').toLowerCase().includes(q))
+      );
+      grid.innerHTML = list.map(card).join('');
+      empty.hidden = !!list.length;
+    }
+
+    document.getElementById('filters').onclick = e => {
+      if (!e.target.matches('.filter')) return;
+      document.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
+      e.target.classList.add('active');
+      active = e.target.dataset.filter;
+      render();
+    };
+    document.getElementById('search-btn').onclick = render;
+    [search,region,status].forEach(el => el.oninput = render);
+    render();
+  </script>
+  <script src="assets/site-shell.js"></script>
+</body>
+</html>
