@@ -8,6 +8,7 @@
   const nav = [
     ["index.html", "首页", "home"],
     ["news.html", "资讯", "news"],
+    ["reports.html", "研究报告", "reports"],
     ["companies.html", "企业数据库", "companies"],
     ["wiki.html", "银发百科", "wiki"],
     ["knowledge-graph.html", "知识图谱", "graph"],
@@ -23,8 +24,10 @@
         : parent === "知识图谱"
           ? "knowledge-graph.html"
           : parent === "数据中心"
-            ? "data-center.html"
-            : "index.html";
+          ? "data-center.html"
+          : parent === "研究报告"
+            ? "reports.html"
+          : "index.html";
 
   const header = document.createElement("header");
   header.className = "yb-header yb-shell";
@@ -46,6 +49,6 @@
 
   const footer = document.createElement("footer");
   footer.className = "yb-footer yb-shell";
-  footer.innerHTML = `<div class="yb-footer-inner"><section><h3>元宝的银发圈</h3><p>建立中国银发经济值得信赖的知识平台，持续连接政策、企业、人物、产品、数据与商业模式。</p></section><section><h4>知识入口</h4><p><a href="companies.html">企业数据库</a><br><a href="wiki.html">银发百科</a><br><a href="knowledge-graph.html">知识图谱</a><br><a href="data-center.html">数据中心</a></p></section><section><h4>内容与专题</h4><p><a href="news.html">银发资讯</a><br><a href="interviews.html">人物专访</a><br><a href="topic-ltc.html">专题研究</a><br><a href="events.html">论坛峰会</a></p></section><section><h4>联系宝总</h4><p>微信：yuanbao0910<br>邮箱：yuanbao0910@163.com<br>公众号：神州养老研习社、银发神州</p></section></div><div class="yb-footer-bottom"><div><span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span><span>最后更新：${updated}</span></div></div>`;
+  footer.innerHTML = `<div class="yb-footer-inner"><section><h3>元宝的银发圈</h3><p>建立中国银发经济值得信赖的知识平台，持续连接政策、企业、人物、产品、数据与商业模式。</p></section><section><h4>知识入口</h4><p><a href="companies.html">企业数据库</a><br><a href="wiki.html">银发百科</a><br><a href="knowledge-graph.html">知识图谱</a><br><a href="data-center.html">数据中心</a></p></section><section><h4>内容与专题</h4><p><a href="news.html">银发资讯</a><br><a href="interviews.html">人物专访</a><br><a href="reports.html">研究报告</a><br><a href="topic-ltc.html">专题研究</a><br><a href="events.html">论坛峰会</a></p></section><section><h4>联系宝总</h4><p>微信：yuanbao0910<br>邮箱：yuanbao0910@163.com<br>公众号：神州养老研习社、银发神州</p></section></div><div class="yb-footer-bottom"><div><span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span><span>最后更新：${updated}</span></div></div>`;
   document.body.appendChild(footer);
 })();
