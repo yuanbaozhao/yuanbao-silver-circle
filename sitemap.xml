@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zhaoyuanbao.com/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://zhaoyuanbao.com/news.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -261,4 +261,6 @@
   <url><loc>https://zhaoyuanbao.com/news/2021-10-history-minus-54.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zhaoyuanbao.com/news/2021-11-history-minus-53.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://zhaoyuanbao.com/news/2021-12-history-minus-52.html</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://zhaoyuanbao.com/news/2026-08-02.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://zhaoyuanbao.com/wechat/2026-08-02-issue-20.html</loc><lastmod>2026-08-02</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>
