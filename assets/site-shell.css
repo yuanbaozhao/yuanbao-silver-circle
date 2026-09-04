@@ -131,7 +131,7 @@
 .yb-footer-inner {
   width: min(1200px, calc(100% - 40px));
   display: grid;
-  grid-template-columns: 1.3fr repeat(3, 1fr);
+  grid-template-columns: 1.3fr .8fr 1fr;
   gap: 32px;
   margin: auto;
   padding: 42px 0;
@@ -270,7 +270,9 @@
 
   .yb-menu {
     flex: 0 0 auto;
-    display: none;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
   }
 
   .yb-brand {
@@ -288,18 +290,20 @@
     order: 3;
     width: 100%;
     justify-content: flex-start;
-    overflow-x: auto;
-    display: flex;
-    gap: 18px;
-    padding-bottom: 2px;
+    display: none;
+    gap: 0;
+    margin-top: 12px;
+    padding: 8px 0;
+    border-top: 1px solid var(--yb-line);
   }
 
   .yb-nav.is-open {
-    display: flex;
+    display: grid;
   }
 
   .yb-nav a {
-    padding: 8px 0;
+    padding: 11px 0;
+    border-bottom: 0;
   }
 
   .yb-footer-inner {
@@ -317,7 +321,7 @@
   }
 
   .yb-brand {
-    padding-right: 100px;
+    padding-right: 12px;
   }
 
   .yb-brand span {
@@ -325,21 +329,14 @@
   }
 
   .yb-search {
-    width: 42px;
+    width: auto;
     justify-content: center;
-    padding: 0 10px;
-    overflow: hidden;
-    color: transparent;
+    padding: 0 12px;
+    color: var(--yb-green);
   }
 
   .yb-search::before {
-    content: "搜";
-    color: var(--yb-green);
-    font-size: .82rem;
-  }
-
-  .yb-search:hover::before {
-    color: #fff;
+    display: none;
   }
 
   .yb-footer-inner,

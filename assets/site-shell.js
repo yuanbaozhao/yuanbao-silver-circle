@@ -7,14 +7,10 @@
   const updated = document.body.dataset.updated || "2026-07-18";
   const nav = [
     ["index.html", "首页", "home"],
-    ["news.html", "资讯", "news"],
-    ["reports.html", "研究报告", "reports"],
-    ["companies.html", "企业数据库", "companies"],
-    ["wiki.html", "银发百科", "wiki"],
-    ["knowledge-graph.html", "知识图谱", "graph"],
-    ["data-center.html", "数据中心", "data"],
-    ["topic-ltc.html", "专题研究", "topics"],
-    ["services.html", "合作", "services"],
+    ["news.html", "最新观察", "news"],
+    ["reports.html", "研究资料", "reports"],
+    ["companies.html", "产业案例", "companies"],
+    ["services.html", "关于合作", "services"],
   ];
   const parentUrl =
     parent === "企业数据库"
@@ -31,14 +27,18 @@
 
   const header = document.createElement("header");
   header.className = "yb-header yb-shell";
-  header.innerHTML = `<div class="yb-header-inner"><a class="yb-brand" href="index.html"><strong>元宝的银发圈</strong><span>LONG-TERM SILVER ECONOMY OBSERVATORY</span></a><nav class="yb-nav" id="yb-nav">${nav
+  header.innerHTML = `<div class="yb-header-inner"><a class="yb-brand" href="index.html"><strong>元宝的银发圈</strong><span>SILVER ECONOMY OBSERVATORY</span></a><nav class="yb-nav" id="yb-nav">${nav
     .map((n) => `<a href="${n[0]}" class="${page === n[2] ? "is-active" : ""}">${n[1]}</a>`)
-    .join("")}</nav><a class="yb-search" href="index.html#site-search">搜索</a><button class="yb-menu" id="yb-menu" aria-label="打开导航">☰</button></div>`;
+    .join("")}</nav><a class="yb-search" href="services.html">联系</a><button class="yb-menu" id="yb-menu" aria-label="打开导航" aria-controls="yb-nav" aria-expanded="false">☰</button></div>`;
   document.body.insertBefore(header, document.body.firstChild);
 
   const menu = document.getElementById("yb-menu");
   const navEl = document.getElementById("yb-nav");
-  menu.onclick = () => navEl.classList.toggle("is-open");
+  menu.onclick = () => {
+    const isOpen = navEl.classList.toggle("is-open");
+    menu.setAttribute("aria-expanded", String(isOpen));
+    menu.setAttribute("aria-label", isOpen ? "关闭导航" : "打开导航");
+  };
 
   if (page !== "home") {
     const crumb = document.createElement("div");
@@ -49,6 +49,6 @@
 
   const footer = document.createElement("footer");
   footer.className = "yb-footer yb-shell";
-  footer.innerHTML = `<div class="yb-footer-inner"><section><h3>元宝的银发圈</h3><p>持续记录正在发生的变化，解释变化背后的机制，连接值得认识的人、企业与实践。</p></section><section><h4>知识入口</h4><p><a href="companies.html">企业数据库</a><br><a href="wiki.html">银发百科</a><br><a href="knowledge-graph.html">知识图谱</a><br><a href="data-center.html">数据中心</a></p></section><section><h4>内容与专题</h4><p><a href="news.html">银发资讯</a><br><a href="interviews.html">人物专访</a><br><a href="reports.html">研究报告</a><br><a href="topic-ltc.html">专题研究</a><br><a href="events.html">论坛峰会</a></p></section><section><h4>联系元宝</h4><p>微信：yuanbao0910<br>邮箱：yuanbao0910@163.com<br>公众号：神州养老研习社、银发神州</p></section></div><div class="yb-footer-bottom"><div><span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span><span>最后更新：${updated}</span></div></div>`;
+  footer.innerHTML = `<div class="yb-footer-inner"><section><h3>元宝的银发圈</h3><p>记录变化，整理知识，连接实践。</p></section><section><h4>浏览内容</h4><p><a href="news.html">最新观察</a><br><a href="reports.html">研究资料</a><br><a href="companies.html">产业案例</a></p></section><section><h4>联系元宝</h4><p>微信：yuanbao0910<br>邮箱：yuanbao0910@163.com<br>公众号：神州养老研习社、银发神州</p></section></div><div class="yb-footer-bottom"><div><span>© 2026 元宝的银发圈 · zhaoyuanbao.com</span><span>最后更新：${updated}</span></div></div>`;
   document.body.appendChild(footer);
 })();
